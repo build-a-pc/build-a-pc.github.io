@@ -82,11 +82,11 @@ ol > li {
   color: #222;
   text-decoration: none;
   text-align: center;
-  margin: 1em 0 .5em;
+  margin: 1em 0 .1em;
 }
 
 .banner-sub-title {
-  font: 1.6em 'Georgia', serif;
+  font: 1.4em 'Georgia', serif;
   text-align: center;
   margin: 0 0 .3em;
 }
