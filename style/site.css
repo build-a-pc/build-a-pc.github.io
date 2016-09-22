@@ -1,0 +1,122 @@
+body {
+  background-color: #eee;
+  color: #222;
+  font-family: 'Arial', sans-serif;
+  line-height: 125%;
+  word-wrap: break-word;
+}
+
+h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
+h1 > a:hover, h2 > a:hover, h3 > a:hover, h4 > a:hover, h5 > a:hover, h6 > a:hover {
+  font-family: 'Georgia', serif;
+  color: #222;
+  text-decoration: none;
+  margin: .8em 0 .8em;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.8em;
+}
+
+a {
+  color: #44a;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+hr {
+  border: 0;
+  background-color: #bbb;
+  height: 2px;
+  margin: 2em 0 2em;
+  clear: both;
+}
+
+img {
+  max-width: 100%;
+}
+
+header {}
+
+section {
+  clear: both;
+}
+
+footer {
+  font-style: italic;
+}
+
+figure {
+  display: inline-block;
+  background-color: #eee;
+  border: 1px solid #bbb;
+  margin: .5em;
+}
+
+figcaption {
+  text-align: center;
+  font-size: .8em;
+  margin: .2em;
+}
+
+ul {
+  list-style-type:square;
+}
+
+ol > li {
+  margin: 1em 0 1em;
+}
+
+.outer-container {
+  max-width: 800px;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.banner-title, .banner-title > a, .banner-title > a:hover {
+  font: 1.8em 'Georgia', serif;
+  color: #222;
+  text-decoration: none;
+  text-align: center;
+  margin: 1em 0 .5em;
+}
+
+.banner-sub-title {
+  font: 1.6em 'Georgia', serif;
+  text-align: center;
+  margin: 0 0 .3em;
+}
+
+.banner-date {
+  font: 1em 'Georgia', serif;
+  text-align: center;
+  margin: 0 0 .5em;
+}
+
+.inner-container {
+  background-color: #fff;
+  border: 2px solid #bbb;
+  padding: 1em 2em 0;
+  overflow: auto;
+}
+
+.bottom-text {
+  text-align: center;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+span.question {
+  display: block;
+  margin-bottom: .5em;
+}
