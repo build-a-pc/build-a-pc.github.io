@@ -30,7 +30,7 @@ a:hover {
 
 hr {
   border: 0;
-  background-color: #bbb;
+  background-color: #49F;
   height: 2px;
   margin: 2em 0 2em;
   clear: both;
@@ -99,7 +99,7 @@ ol > li {
 
 .inner-container {
   background-color: #fff;
-  border: 2px solid #bbb;
+  border: 2px solid #49F;
   padding: 1em 2em 0;
   overflow: auto;
 }
