@@ -9,3 +9,5 @@ By Ad Infinitum. A NTNU IT2805 Web Technologies project.
 
 ## Code Style
 + 2 spaces for indent, no tabs
+	 I won't tolerate this, tabs over space (http://youtu.be/SsoOG6ZeyUI)
+	 We need a vote on this.
