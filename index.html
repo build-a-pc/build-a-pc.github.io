@@ -2,49 +2,165 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Build a PC by Ad Infinitum: Home page" />
-    <meta name="author" content="H&aring;vard, Runar, Petter, Thomas" />
-    <meta name=viewport content="width=device-width, initial-scale=1" />
-    <title>Ad Infinitum</title>
+    <meta name="description" content="Build-a-PC: Home" />
+    <meta name="author" content="Ad Infinitum" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Build-a-PC</title>
     <!-- Style normalizer: Normalize.css -->
-    <link rel="stylesheet" type="text/css" href="style/normalize.css" />
+    <link rel="stylesheet" href="/style/normalize.css" />
     <!-- Website style -->
-    <link rel="stylesheet" type="text/css" href="style/site.css" />
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" href="/style/site.css" />
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Slab">
+    <!-- Favicon and stuff -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/favicon/manifest.json">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#cc0000">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="Build-a-PC">
+    <meta name="application-name" content="Build-a-PC">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
   </head>
 
   <body>
-    <div class="outer-container">
-      <div class="banner">
-        <p class="banner-title"><a href="#">Build a PC</a></p>
-        <p class="banner-sub-title">by Ad Infinitum</p>
+    <div class="site-container">
+    <div class="site-header-container">
+      <div class="site-header">
+        <img class="site-header-logo" src="/images/logo.gif" alt="logo" />
+        <p class="site-header-title"><a href="/">Build-a-PC</a></p>
+        <p class="site-header-sub-title">by Ad Infinitum</p>
       </div>
+    </div>
 
-      <div class="inner-container">
-        <main>
-          <section id="wip">
-            <header>
-              <h1><a href="#wip">Work In Progress</a></h1>
-            </header>
-
-            <p>Just a tempory home page.</p>
-          </section>
-
-          <hr />
-
-          <section id="links">
-            <header>
-              <h1><a href="#links">Links</a></h1>
-            </header>
-
+    <div class="site-center-container">
+      <div class="site-center">
+        <div class="navbar-container">
+          <div class="navbar">
             <ul>
-              <li><a href="documents/">Project Documents</a></li>
+              <div class="navbar-group">
+                <li class="dropdown">
+                  <a href="#" class="dropbutton">Parts</a>
+                  <div class="dropdown-content">
+                    <a href="#">Motherboard and CPU</a>
+                    <a href="#">RAM and GPU</a>
+                    <a href="#">Storage, network card, sound card</a>
+                    <a href="#">Cooling, PSU, case</a>
+                    <a href="#">Accessories</a>
+                  </div>
+                </li>
+
+                <li><a href="#">Part vendors</a></li>
+              </div>
+
+              <div class="navbar-group">
+                <li class="dropdown">
+                  <a href="#" class="dropbutton">Operating Systems</a>
+                  <div class="dropdown-content">
+                    <a href="#">Windows</a>
+                    <a href="#">Linux</a>
+                    <a href="#">Macintosh</a>
+                  </div>
+                </li>
+
+                <li class="dropdown">
+                  <a href="#" class="dropbutton">Assembling the PC</a>
+                  <div class="dropdown-content">
+                    <a href="#">Hardware</a>
+                    <a href="#">Software</a>
+                  </div>
+                </li>
+              </div>
             </ul>
-          </section>
-        </main>
+          </div>
+        </div>
+
+        <div class="breadcrumbs">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Parts</a></li>
+            <li><a href="#">CPU</a></li>
+          </ul>
+        </div>
+
+        <div class="content">
+          <main>
+            <section id="wip">
+              <header>
+                <h1><a href="#wip">Work In Progress</a></h1>
+              </header>
+
+              <figure class="float-right">
+                <img src="/images/logo/logo_256.gif" />
+                <figcaption>Figure test</figcaption>
+              </figure>
+
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae turpis neque.
+                Curabitur malesuada sollicitudin ligula id cursus. Integer in iaculis ante, vitae porta neque.
+                Integer porttitor nibh non auctor elementum.
+                Sed posuere lectus purus, sit amet interdum sapien ultricies a.
+                Aliquam viverra pharetra tincidunt. Donec nec ante rhoncus, aliquet quam ut, gravida mauris.
+                Praesent eros magna, ullamcorper id maximus varius, venenatis in lorem.
+                Vestibulum tempus blandit nisi, eu bibendum massa ultrices at.
+                In facilisis, tellus eget vestibulum auctor, sem enim mattis justo, eu laoreet elit purus eget velit.
+                Donec sem tortor, sagittis sed dictum convallis, molestie in dui. Nam pretium tempor lobortis.
+                Sed hendrerit nulla quis neque iaculis posuere. Duis eget placerat sem, sit amet cursus mauris.
+                Aliquam tristique, ex nec accumsan ornare, mi nibh condimentum est, a venenatis sapien nisi in tortor.
+                Sed molestie, odio rhoncus scelerisque accumsan, dui dui euismod dolor, at porta eros magna nec erat.</p>
+
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae turpis neque.
+                Curabitur malesuada sollicitudin ligula id cursus. Integer in iaculis ante, vitae porta neque.
+                Integer porttitor nibh non auctor elementum.
+                Sed posuere lectus purus, sit amet interdum sapien ultricies a.
+                Aliquam viverra pharetra tincidunt. Donec nec ante rhoncus, aliquet quam ut, gravida mauris.
+                Praesent eros magna, ullamcorper id maximus varius, venenatis in lorem.
+                Vestibulum tempus blandit nisi, eu bibendum massa ultrices at.
+                In facilisis, tellus eget vestibulum auctor, sem enim mattis justo, eu laoreet elit purus eget velit.
+                Donec sem tortor, sagittis sed dictum convallis, molestie in dui. Nam pretium tempor lobortis.
+                Sed hendrerit nulla quis neque iaculis posuere. Duis eget placerat sem, sit amet cursus mauris.
+                Aliquam tristique, ex nec accumsan ornare, mi nibh condimentum est, a venenatis sapien nisi in tortor.
+                Sed molestie, odio rhoncus scelerisque accumsan, dui dui euismod dolor, at porta eros magna nec erat.</p>
+
+              <div class="code">
+                <p>Code test</p>
+                <p>1234<p/>
+              </div>
+            </section>
+
+            <hr />
+
+            <section id="more">
+              <header>
+                <h1><a href="#more">More!</a></h1>
+              </header>
+
+              <ul>
+                <li>More</li>
+              </ul>
+            </section>
+          </main>
+        </div>
       </div>
-      <br />
+    </div>
+      <div class="site-footer-container">
+        <div class="site-footer">
+          <div class="site-footer-box">
+            <p><b>About</b></p>
+            <p><i>Lorem ipsum dolor sit amet</i></p>
+          </div>
+
+          <div class="site-footer-box">
+            <p><b>Links</b></p>
+            <ul>
+              <li><a href="documents/">Project documents</a></li>
+            </ul>
+          </div>
+
+          <p class="copyright">Copyright &copy; 2016 github.com/build-a-pc</p>
+        </div>
+      </div>
     </div>
   </body>
 </html>
