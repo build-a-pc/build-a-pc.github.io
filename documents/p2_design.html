@@ -27,102 +27,180 @@
 
       <div class="inner-container">
         <main>
-          <section id="tmp_sect_1">
+          <section id="summary_of_p1">
             <header>
-              <h1><a href="#tmp_sect_1">JavaScript</a></h1>
+              <h1><a href="#summary_of_p1">Recap from P1</a></h1>
             </header>
 
-            <p>JavaScript.</p>
-			<p>1. AJAX, for updating the page without reloading the whole page</p>
-			<p>2. Some sort of testvalidation after each part, to see if the reader has learned anything, and of they have to read something again.</p>
-			<p>3. Highlightning elements that is linked to eachother, like text of exemple1 and the pictre of exemple2, where if you hover over 1 you will highlight the other</p>
-			<p>4. Set beginner mode or expert mode, change the content of the page depending of mode. Showing more indeept content for expert and hiding it for beginner</p>
-			<p>5. Search on webpage with auto complete</p>
-			<p>6. Dynamic breadcrumps</p>
-			<p>Clearly indicate how each of you will be fulfilling these minimum requirements. ??</p>
+            <p>Client: Ad Infinitum (that's still us)</p>
+            <p><b>TODO</b>: Purpose, goals and audience. (Recap from P1)</p>
           </section>
 
           <hr />
 
-          <section id="tmp_sect_2">
+          <section id="nav_struct">
             <header>
-              <h1><a href="#tmp_sect_2">Navigation Structure</a></h1>
+              <h1><a href="#nav_struct">Navigation Structure</a></h1>
             </header>
 
-            <p>Navigation Structure:</p>
-			<p>Every subpage of the website will have the dropdown menu and the breadcrumps. Getting around the page will be very easy. Where you can get back with the breadcrumps, and jump cross sections with the dropdown menu. Becasue of this every page will link to each other.</p>
-			<p>We will also describe how to navigate the webpage on the frontpage, in a how to use tutorial of the webpage. </p>
-			<p>A search function will be included for when a vistor cant find what he want to see, where he will get results linking what the search function can find on the website</p>
-          </section>
-		  
-		  <hr />
+            <p>Every subpage of the website will have the dropdown menu and the breadcrumps. Getting around the page will be very easy. Where you can get back with the breadcrumps, and jump cross sections with the dropdown menu. Becasue of this every page will link to each other.</p>
+            <p>We will also describe how to navigate the webpage on the frontpage, in a how to use tutorial of the webpage. </p>
+            <p>A search function will be included for when a vistor cant find what he want to see, where he will get results linking what the search function can find on the website</p>
 
-          <section id="tmp_sect_3">
+            <h2 id="logical_struct"><a href="#logical_struct">Logical Navigation Structure</a></h2>
+            <p>This is how the user will experience the navigation structure.</p>
+            <p>The structure consists of sections and pages. Sections are logical groupings of pages, and will each have a section page with links to all pages in that section.</p>
+            <ul>
+              <li>Home</li>
+              <li>Parts (section) (note: structure of these pages might change)
+                <ul>
+                  <li>Motherboard and CPU</li>
+                  <li>RAM and GPU</li>
+                  <li>Storage, network card, sound card</li>
+                  <li>Cooling, PSU, case</li>
+                  <li>Accessories</li>
+                </ul>
+              </li>
+              <li>Part vendors (section and single page)</li>
+              <li>Operating Systems (section)
+                <ul>
+                  <li>Windows</li>
+                  <li>Linux</li>
+                  <li>Macintosh</li>
+                </ul>
+              </li>
+              <li>Assembling the PC (section)
+                <ul>
+                  <li>Hardware</li>
+                  <li>Software</li>
+                </ul>
+              </li>
+            </ul>
+
+            <h2 id="file_struct"><a href="#file_struct">File Navigation Structure</a></h2>
+            <p>This is what the file navigation structure will look like.</p>
+            <ul>
+              <li>documents/: Contains a standalone/independent site (sub-site) for project documents.
+                <ul>
+                  <li>images/: Contains images.</li>
+                  <li>mockups/: Contains mockups of the site.</li>
+                  <li>style/: Contains styles.</li>
+                  <li>index.html: Sub-site index with links to all project documents.</li>
+                  <li>p1_requirements.html: P1 Project Requirements document.</li>
+                  <li>p2_design.html: P2 Project Design document.</li>
+                  <li>px_abc.html: Other project documents.</li>
+                  <li>px_template.html: Template for new project documents.</li>
+                </ul>
+              </li>
+              <li>favicon/: Contains favicon and related images and configurations.</li>
+              <li>images/: Contains all images.
+                <ul>
+                  <li>logo/: Contains site logos in different sizes.</li>
+                  <li>parts/: Contains PC part images.</li>
+                </ul>
+              </li>
+              <li>pages/: Contains all pages other than home (which is in index.html). These files will be loaded into index.html and replace home live via AJAX.</li>
+              <li>style/: Contains all styles.
+                <ul>
+                  <li>normalize.css: CSS normalizer/reset.</li>
+                  <li>site.css: Styles for entire site (not sub-site).</li>
+                </ul>
+              </li>
+              <li>index.html: Site index, contains home page and will load other pages via AJAX.</li>
+            </ul>
+          </section>
+
+          <hr />
+
+          <section id="page_layout">
             <header>
-              <h1><a href="#tmp_sect_3">Page Layout and Appearance</a></h1>
+              <h1><a href="#page_layout">Page Layout and Appearance</a></h1>
             </header>
 
             <p>(types and sizes??), the color scheme (for text, background, links, shadows, borders, etc.??)</p>
-			<p>The positions of elements on the webpage can you see in the mockup of the webpage. We have a dropdown menu and breadcrumps on the top of the webpage for easy accses and visibility all the time. The footer at the bottom with external links.</p>
-          </section>
-		  
-		  <hr />
+            <p>The positions of elements on the webpage can you see in the mockup of the webpage. We have a dropdown menu and breadcrumps on the top of the webpage for easy accses and visibility all the time. The footer at the bottom with external links.</p>
 
-          <section id="tmp_sect_4">
+            <h2 id="mockups"><a href="#mockups">Mockups</a></h2>
+            <p><a href="mockups/logo_256.gif">One of the logo .gifs</a></p>
+  	        <p><a href="mockups/background.gif">Background</a></p>
+            <p><a href="mockups/2.5_vs_3.5_HDD.JPG">One of the part .jpg more will be added</a></p>
+  			    <p><a href="mockups/mockup_of_page.png">Mockup of the whole webpage</a></p>
+  			    <p><a href="mockups/mockup_of_dropdown.png">Mockup of the dropdown</a></p>
+  			    <p><a href="mockups/mockup_of_dropdown1.png">Mockup of the dropdown when it is down</a></p>
+  			    <p><a href="mockups/mokcup_of_breadcrumps.png">Mockup of the breadcrumps</a></p>
+          </section>
+
+          <hr />
+
+          <section id="content">
             <header>
-              <h1><a href="#tmp_sect_4">Content</a></h1>
+              <h1><a href="#content">Content</a></h1>
             </header>
 
             <p>This is the longest section of your document. For every page, you will need to give
-			a text description of the content of the page as well as an image of the mockup of the page.
-			The text describes what goal(s) this page fulfills, and how design decisions specific to it
-			contribute into fulfilling such goals. The reason why you should describe the content is that
-			you might not have yet received the actual content from the client and in your mockup of the
-			page you will be using fake text, fake images, etc. While the content can be fake, you should
-			try to use meaningful headings and captions to convey its meaning. Finally you should
-			describe the design decisions that are unique for this particular page (if any).</p>
-			<p></p>
-			<p>Every page of the website will have the same top with logo, dropdown,breadcrumps, and the sides, bottom will also be the same</p>
-			<p>The middlepart will be build up of a Title(Part, Part Vendors..) and a Subtitle(Motherboard, RAM...), down the site we will have inforamtion about what the Subtitle refers to, together with pictures and videos if time,</p>
-			<p>This describes the Subpages, the mainpage will be different. The mainpage will have information about the page it self, guides how to use it (the use of the dropdown menu), what the goal of the webpage is, any function we have implemented (highlightning of link elements, search function), and last some information about ourself</p>
-			
+            a text description of the content of the page as well as an image of the mockup of the page.
+            The text describes what goal(s) this page fulfills, and how design decisions specific to it
+            contribute into fulfilling such goals. The reason why you should describe the content is that
+            you might not have yet received the actual content from the client and in your mockup of the
+            page you will be using fake text, fake images, etc. While the content can be fake, you should
+            try to use meaningful headings and captions to convey its meaning. Finally you should
+            describe the design decisions that are unique for this particular page (if any).</p>
+            <p></p>
+            <p>Every page of the website will have the same top with logo, dropdown,breadcrumps, and the sides, bottom will also be the same</p>
+            <p>The middlepart will be build up of a Title(Part, Part Vendors..) and a Subtitle(Motherboard, RAM...), down the site we will have inforamtion about what the Subtitle refers to, together with pictures and videos if time,</p>
+            <p>This describes the Subpages, the mainpage will be different. The mainpage will have information about the page it self, guides how to use it (the use of the dropdown menu), what the goal of the webpage is, any function we have implemented (highlightning of link elements, search function), and last some information about ourself</p>
           </section>
-		  
-		  <hr />
 
-          <section id="tmp_sect_5">
+          <hr />
+
+          <section id="min_req">
             <header>
-              <h1><a href="#tmp_sect_5">Our plan about how to finish</a></h1>
+              <h1><a href="#min_req">Minimum Requirements</a></h1>
+            </header>
+
+            <p>1. AJAX, for updating the page without reloading the whole page</p>
+            <p>2. Some sort of testvalidation after each part, to see if the reader has learned anything, and of they have to read something again.</p>
+            <p>3. Highlightning elements that is linked to eachother, like text of exemple1 and the pictre of exemple2, where if you hover over 1 you will highlight the other</p>
+            <p>4. Set beginner mode or expert mode, change the content of the page depending of mode. Showing more indeept content for expert and hiding it for beginner</p>
+            <p>5. Search on webpage with auto complete</p>
+            <p>6. Dynamic breadcrumps</p>
+            <p>Clearly indicate how each of you will be fulfilling these minimum requirements. ??</p>
+          </section>
+
+          <hr />
+
+          <section id="plan">
+            <header>
+              <h1><a href="#plan">Plan</a></h1>
             </header>
 
             <p>Provide a clear, specific description of your plan for building the site. Outline the tasks
-			to be accomplished, the deadlines for those tasks, and who is responsible for them. Include a
-			list of files and folders, which will help each partner link to files her partner has built. Include a
-			complete list of everything you need to get from your client (text, pictures, sound, etc.) and
-			when you expect to get them. To the greatest extent you can, try to have all of these things by
-			the time your design is done, so that nothing will delay your coding.</p>
-			
-			<p>The most important things we have to build is the dropdown menu, breadcrumps, search function and AJAX this functions is what the user will experience the most and will give the best experience of the webpage</p>
-			<p>We most not forget that the actual text content have to be written, this will take a lot of time to compile together</p>
-			<p>List of placement of files and folders</p>
-			<p>main level: file: index.html, folders: documents, favicon, images, style, javascript.
-			<p>Documents: Any documents required for the project</p>
-			<p>favicon: This one explain it self</p>
-			<p>Images: Contains folders: logo, parts, website. Where the folder "logo" contains the logos for our website, "parts" contains pictures of the parts we include on our webpage, "website" contains every other element we use on our webpage, main level on this folder will also include elements the webpage is made of</p>
-			<p>Style: will contain any css stylesheets we create</p>
-			<p>JavaScript: will contain any javascrips we create</p>
-			<p>Petter and Thomas have to get the pictures of the parts before we start the coding, Petter will get all the pictures of parts required to build a pc before 14.10 if the mail dont screw up. Thomas will help with the taking of them</p>
-			<p>Runar will get the logos, backgrounds and other elements required for the webpage finished by XX.XX WE NEED TIME</p>
-			<p>Everyone will help with the JavaScript, CSS, HTML, and get it fini by XX.XX WE NEED TIME</p>
-			<p>JavaScripts needed are AJAX, Highlightning, beginner/expert mode, search function, dynamic breadcrumps, testformvalidation</p>
-			<p>Håvard need to finish AJAX by XX.XX</p>
-			<p>Petter need to finish search function by XX.XX</p>
-			<p>Runar need to finish Highlightning by XX.XX</p>
-			<p>Thomas need to finish dynamic breadcrumps by XX.XX</p>
-			<p>Petter need to finish testformvalidation by XX.XX</p>
-			<p>Thomas need to finish beginner/expert mode by XX.XX</p>
-          </section>		  
-		  
+      to be accomplished, the deadlines for those tasks, and who is responsible for them. Include a
+      list of files and folders, which will help each partner link to files her partner has built. Include a
+      complete list of everything you need to get from your client (text, pictures, sound, etc.) and
+      when you expect to get them. To the greatest extent you can, try to have all of these things by
+      the time your design is done, so that nothing will delay your coding.</p>
+
+      <p>The most important things we have to build is the dropdown menu, breadcrumps, search function and AJAX this functions is what the user will experience the most and will give the best experience of the webpage</p>
+      <p>We most not forget that the actual text content have to be written, this will take a lot of time to compile together</p>
+      <p>List of placement of files and folders</p>
+      <p>main level: file: index.html, folders: documents, favicon, images, style, javascript.
+      <p>Documents: Any documents required for the project</p>
+      <p>favicon: This one explain it self</p>
+      <p>Images: Contains folders: logo, parts, website. Where the folder "logo" contains the logos for our website, "parts" contains pictures of the parts we include on our webpage, "website" contains every other element we use on our webpage, main level on this folder will also include elements the webpage is made of</p>
+      <p>Style: will contain any css stylesheets we create</p>
+      <p>JavaScript: will contain any javascrips we create</p>
+      <p>Petter and Thomas have to get the pictures of the parts before we start the coding, Petter will get all the pictures of parts required to build a pc before 14.10 if the mail dont screw up. Thomas will help with the taking of them</p>
+      <p>Runar will get the logos, backgrounds and other elements required for the webpage finished by XX.XX WE NEED TIME</p>
+      <p>Everyone will help with the JavaScript, CSS, HTML, and get it fini by XX.XX WE NEED TIME</p>
+      <p>JavaScripts needed are AJAX, Highlightning, beginner/expert mode, search function, dynamic breadcrumps, testformvalidation</p>
+      <p>Håvard need to finish AJAX by XX.XX</p>
+      <p>Petter need to finish search function by XX.XX</p>
+      <p>Runar need to finish Highlightning by XX.XX</p>
+      <p>Thomas need to finish dynamic breadcrumps by XX.XX</p>
+      <p>Petter need to finish testformvalidation (=quiz? -Håvard) by XX.XX</p>
+      <p>Thomas need to finish beginner/expert mode by XX.XX</p>
+          </section>
         </main>
       </div>
       <br />

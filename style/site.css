@@ -117,6 +117,18 @@ code {
   float: right;
 }
 
+.spin {
+  animation-name: spin;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+    0% {transform:rotate(0deg);}
+    100% {transform:rotate(360deg);}
+}
+
 /* Specific styles */
 
 .site-container {
@@ -213,9 +225,9 @@ code {
 .navbar a {
   display: inline-block;
   width: 160px;
+  padding: 5px 10px;
   color: #fff;
   text-align: center;
-  padding: 5px 10px;
   text-decoration: none;
 }
 
@@ -256,7 +268,7 @@ code {
 
 .dropdown-content a {
   display: block;
-  padding: 15px 10px;
+  padding: 10px 10px;
   color: #222;
   text-decoration: none;
   text-align: left;
