@@ -32,8 +32,8 @@
               <h1><a href="#summary_of_p1">Recap from P1</a></h1>
             </header>
 
-            <p>Client: Ad Infinitum (that's still us)</p>
-            <p><b>TODO</b>: Purpose, goals and audience. (Recap from P1)</p>
+            <p>We are Ad Infinitum, and we are creating a website to teach people about building personal computers, and how its parts work, which part vendors to pick from and which operatins systems to choose from.
+            That is our goal and purpose. The desired audience is people curious about this, but not knowing how to do it.</p>
           </section>
 
           <hr />
@@ -43,13 +43,22 @@
               <h1><a href="#nav_struct">Navigation Structure</a></h1>
             </header>
 
-            <p>Every subpage of the website will have the dropdown menu and the breadcrumps. Getting around the page will be very easy. Where you can get back with the breadcrumps, and jump cross sections with the dropdown menu. Becasue of this every page will link to each other.</p>
-            <p>We will also describe how to navigate the webpage on the frontpage, in a how to use tutorial of the webpage. </p>
-            <p>A search function will be included for when a vistor cant find what he want to see, where he will get results linking what the search function can find on the website</p>
+            <p>Every page will have the same navigation bar with dropdown menus which links to all the normal pages of the website, so that all the normal pages link to each other.
+              By normal, I mean pages intended for the user to visit.
+              Other, less relevant pages, like these documents, will be linked in the footer of every normal page.
+              The site map will also be linked to in the footer, and will act like a normal page once entered (normal except not linked to in navigation bar).
+              All normal pages except home will also use breadcrumbs, right under the navigation bar, which links to all parent pages.
+              The home page will contain some basic information of what the site consists of and how to reach it.
+              We will also implement a front-end search feature, located in the site header as a text field, where the user can find all pages and some page sections on the site.</p>
 
             <h2 id="logical_struct"><a href="#logical_struct">Logical Navigation Structure</a></h2>
-            <p>This is how the user will experience the navigation structure.</p>
-            <p>The structure consists of sections and pages. Sections are logical groupings of pages, and will each have a section page with links to all pages in that section.</p>
+            <p>This is how the user will experience the navigation structure.
+              The structure consists of a hierarchical structure of sections and pages. Sections are logical groupings of pages, and will each have a section page with links to all pages in that section.</p>
+            <p>All pages will use index.html, which will load the content of pages via AJAX. The pages will be accessable via the query string of a URL,
+              so that instead of links like "example.com/page5", we will have links like "example.com?p=page5".
+              The reason we chose this method to reduce overhead (boilerplate) between pages, since we can't use server processing.
+              When a user goes to another in-site page, only the content part will be reloaded, and info like window title, URL, etc will be updated programmatically.</p>
+
             <ul>
               <li>Home</li>
               <li>Parts (section) (note: structure of these pages might change)
@@ -118,8 +127,36 @@
               <h1><a href="#page_layout">Page Layout and Appearance</a></h1>
             </header>
 
-            <p>(types and sizes??), the color scheme (for text, background, links, shadows, borders, etc.??)</p>
-            <p>The positions of elements on the webpage can you see in the mockup of the webpage. We have a dropdown menu and breadcrumps on the top of the webpage for easy accses and visibility all the time. The footer at the bottom with external links.</p>
+            <p>All pages of the website will be based on one generic layout. This layout consists of a full-width header, full-width footer, and a central part.
+              The header will consist of the site logo, site name, client/author name, a search field and possibly some social icons (probably not).
+              The central part will have limited width and will consist of a navigation bar with dropdown menus, breadcrumbs (except home), and the content (the dynamic "page").
+              The footer will consist of two columns, the first with a site description, the second with misc. links, and a copyright line beneath the columns.</p>
+
+              <p>See <a href="#mockups">mockups</a> for images.</p>
+
+            <h2 id="fonts_color_scheme"><a href="#fonts_color_scheme">Fonts and Color Schemes</a></h2>
+            <p>This are the fonts and color schemes used.</p>
+            <ul>
+              <li>Text: Color #222, font 'Roboto', sans-serif</li>
+              <li>Headings: Color #222, font 'Roboto Slab', serif</li>
+              <li>Font size: Default, as set by Normalizer.css</li>
+              <li>Line height: 125%</li>
+              <li>Links: Color #c00</li>
+              <li>Site background: Repeating image of 8x8 pixels, color #555 grid with color #444 background</li>
+              <li>Site header background: Gradient from color #c00 top to color #800 bottom</li>
+              <li>Site header text: Color #fff, font 'Roboto Slab', serif</li>
+              <li>Site header shadow: Color #800</li>
+              <li>Central container border and shadow: Color #333</li>
+              <li>Site footer background: Color #333</li>
+              <li>Site footer text: Color #aaa</li>
+              <li>Site footer link: Color #ccc</li>
+              <li>Site footer shadow: Color #222</li>
+              <li>Navbar background: Color #444</li>
+              <li>Navbar text: Color #fff</li>
+              <li>Content background: Color #fff</li>
+              <li>Code, figure, etc background: Color #ddd</li>
+              <li>Code text: Font 'Roboto Mono', monospace</li>
+            </ul>
 
             <h2 id="mockups"><a href="#mockups">Mockups</a></h2>
             <p><a href="mockups/logo_256.gif">One of the logo .gifs</a></p>

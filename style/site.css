@@ -1,9 +1,31 @@
 /* Default style for Build-a-PC by Ad Infinitum */
 
+/* Theme:
+ * Font: #222, 'Roboto', sans-serif
+ * Heading font: #222, 'Roboto Slab', serif
+ * Link color: #c00
+ * Font size: Default
+ * Line height: 125%
+ * Primary color: #c00
+ * Secondary color: #800
+ * Site backhround color: #444
+ * Site background image: Repeating 8px*8px #555 grid with #444 background
+ * Site header background color: Gradient from #c00 top to #800 bottom
+ * Site header font: #fff, 'Roboto Slab', serif
+ * Site footer background color: #333
+ * Site footer text color: #aaa
+ * Site footer link color: #ccc
+ * Navbar background color: #444
+ * Navbar color: #fff
+ * Content background color: #fff
+ * Code, figure, etc background color: #ddd
+ * Code font: 'Roboto Mono', monospace
+ */
+
 /* Generic styles */
 
 html, body {
-  min-height: 100%;
+  height: 100%;
   padding: 0;
   margin: 0;
 }
@@ -22,7 +44,7 @@ h1 > a:hover, h2 > a:hover, h3 > a:hover, h4 > a:hover, h5 > a:hover, h6 > a:hov
   font-family: 'Roboto Slab', serif;
   color: #222;
   text-decoration: none;
-  margin: .8em 0 .8em;
+  margin: 1em 0 .8em;
 }
 
 h1 {
@@ -63,7 +85,7 @@ footer {
 
 figure {
   display: inline-block;
-  background-color: #ccc;
+  background-color: #ddd;
   border: 1px solid #aaa;
   margin: 10px;
 }
@@ -85,7 +107,7 @@ ol > li {
 code {
   /* See .code */
   font-family: 'Roboto Mono', monospace;
-  background: #ccc;
+  background: #ddd;
   color: #222;
   white-space: pre;
   padding: 0 .3em;
@@ -94,7 +116,7 @@ code {
 .code {
   /* See code */
   font: 0.8em 'Roboto Mono', monospace;
-  background: #ccc;
+  background: #ddd;
   color: #222;
   border: 1px solid #aaa;
   padding: 5px;
