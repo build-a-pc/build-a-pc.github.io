@@ -168,36 +168,39 @@ code {
 .site-header {
   position: relative;
   width: 800px;
-  padding: 15px 0 5px;
+  height: 64px;
+  padding: 15px 0;
   margin: 0 auto;
   color: #fff;
 }
 
 .site-header-logo {
-  position: relative;
+  position: absolute;
   width: 64px;
   height: 64px;
   left: 50px;
 }
 
-.site-header-title, .site-header-title > a, .site-header-title > a:hover {
-  font: 1.8em 'Roboto Slab', serif;
-  color: #fff;
-  text-decoration: none;
+.site-header-title {
+  position: absolute;
+  display: inline;
+  margin: 0;
+  top: 15px;
+  left: 150px;
+  font: 50px 'Roboto Slab', serif;
 }
 
-.site-header-title {
-  position: relative;
-  display: inline;
-  left: 80px;
-  top: -10px;
+.site-header-title, .site-header-title > a, .site-header-title > a:hover {
+  color: #fff;
+  text-decoration: none;
 }
 
 .site-header-sub-title {
   position: relative;
   display: inline;
-  left: 300px;
-  top: -10px;
+  margin: 0;
+  top: 35px;
+  left: 625px;
   font: 1em 'Roboto Slab', serif;
 }
 
@@ -216,21 +219,18 @@ code {
   margin: 5px auto 5px;
 }
 
-.navbar-container {
+.navbar {
+  display: inline-block;
+  width: 100%;
   text-align: center;
   background-color: #444;
 }
 
-.navbar {
-  display: inline-block;
-}
-
-.navbar-group {
-  display: inline-block;
-}
-
-.navbar > ul > li {
-  color: blue;
+.navbar br {
+  display: none;
+  width: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .navbar ul {
@@ -238,10 +238,6 @@ code {
   margin: 0;
   padding: 0;
   overflow: hidden;
-}
-
-.navbar li {
-    float: left;
 }
 
 .navbar a {
@@ -388,33 +384,34 @@ code {
 
 /* Media styles */
 
-/* Small windows and small devices */
-@media screen and (max-width: 900px) , screen and (max-device-width: 940px) {
+@media screen and (max-width: 899px) {
 
   .site-header {
     width: 90vw;
-    padding: 5px 0 0;
+    height: 64px;
+    padding: 5px 0;
     text-align: center;
   }
 
   .site-header-logo {
-    left: -10px;
-    top: 0;
+    position: absolute;
+    left: 0;
+    top: 5px;
   }
 
   .site-header-title {
-    left: 10px;
-    top: -10px;
-  }
-
-  .site-header-sub-title {
-    left: 0;
-    top: 0;
-    margin: -20px 0 0;
-  }
-
-  .site-header-sub-title {
+    position: relative;
     display: block;
+    top: -10px;
+    left: 0;
+  }
+
+  .site-header-sub-title {
+    position: relative;
+    display: block;
+    margin-top: -20px;
+    top: 0;
+    left: 0;
   }
 
   .site-center-container {
@@ -439,10 +436,11 @@ code {
 
   .site-footer-box, .site-footer-box:nth-child(1), .site-footer-box:nth-child(2) {
     position: absolute;
-    left: 20px;
-    right: 20px;
+    left: 2vw;
+    right: 2vw;
     width: auto;
     height: 150px;
+    padding: 0 5vw;
     border: 2px solid #444;
   }
 
@@ -453,6 +451,30 @@ code {
   .site-footer-box:nth-child(2) {
     top: 190px;
   }
+}
 
-  /* TODO footer + footer boxes */
+@media screen and (max-width: 450px) {
+  .site-header-title {
+    top: 0;
+    left: 20px;
+    font-size: 2em;
+  }
+
+  .site-header-sub-title {
+    margin-top: -5px;
+  }
+}
+
+@media screen and (min-width: 450px) and (max-width: 849px) {
+
+  .navbar br.two {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 449px) {
+
+  .navbar br {
+    display: block;
+  }
 }
