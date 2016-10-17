@@ -6,12 +6,22 @@
     <meta name="author" content="github.com/build-a-pc" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Build-a-PC</title>
+
+    <!-- Scripts -->
+    <script src="/scripts/ajax.js" defer></script>
+    <script src="/scripts/breadcrumbs.js" defer></script>
+    <script src="/scripts/search.js" defer></script>
+    <script src="/scripts/highlighting.js" defer></script>
+    <script src="/scripts/beginner_expert.js" defer></script>
+    <script src="/scripts/search.js" defer></script>
+
     <!-- Style normalizer: Normalize.css -->
     <link rel="stylesheet" href="/style/normalize.css" />
     <!-- Website style -->
     <link rel="stylesheet" href="/style/site.css" />
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Slab">
+
     <!-- Favicon and stuff -->
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="/favicon/favicon-32x32.png" sizes="32x32">
@@ -90,55 +100,53 @@
           </ul>
         </div>
 
-        <div class="content">
-          <main>
-            <section id="wip">
-              <header>
-                <h1><a href="#wip">Work In Progress</a></h1>
-              </header>
+        <main class="content">
+          <section id="wip">
+            <header>
+              <h1><a href="#wip">Work In Progress</a></h1>
+            </header>
 
-              <figure class="float-right">
-                <img src="/images/logo/logo_256.gif" />
-                <figcaption>Figure test</figcaption>
-              </figure>
+            <figure class="float-right" onclick="this.className += ' spin'">
+              <img src="/images/logo/logo_256.gif" />
+              <figcaption>Figure test</figcaption>
+            </figure>
 
-              <figure class="float-right">
-                <img class="spin" src="/images/loading.png" />
-                <figcaption>Loading</figcaption>
-              </figure>
+            <figure class="float-right">
+              <img class="spin" src="/images/loading.png" />
+              <figcaption>Loading</figcaption>
+            </figure>
 
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae turpis neque.
-                Curabitur malesuada sollicitudin ligula id cursus. Integer in iaculis ante, vitae porta neque.
-                Integer porttitor nibh non auctor elementum.
-                Sed posuere lectus purus, sit amet interdum sapien ultricies a.
-                Aliquam viverra pharetra tincidunt. Donec nec ante rhoncus, aliquet quam ut, gravida mauris.
-                Praesent eros magna, ullamcorper id maximus varius, venenatis in lorem.
-                Vestibulum tempus blandit nisi, eu bibendum massa ultrices at.
-                In facilisis, tellus eget vestibulum auctor, sem enim mattis justo, eu laoreet elit purus eget velit.
-                Donec sem tortor, sagittis sed dictum convallis, molestie in dui. Nam pretium tempor lobortis.
-                Sed hendrerit nulla quis neque iaculis posuere. Duis eget placerat sem, sit amet cursus mauris.
-                Aliquam tristique, ex nec accumsan ornare, mi nibh condimentum est, a venenatis sapien nisi in tortor.
-                Sed molestie, odio rhoncus scelerisque accumsan, dui dui euismod dolor, at porta eros magna nec erat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae turpis neque.
+              Curabitur malesuada sollicitudin ligula id cursus. Integer in iaculis ante, vitae porta neque.
+              Integer porttitor nibh non auctor elementum.
+              Sed posuere lectus purus, sit amet interdum sapien ultricies a.
+              Aliquam viverra pharetra tincidunt. Donec nec ante rhoncus, aliquet quam ut, gravida mauris.
+              Praesent eros magna, ullamcorper id maximus varius, venenatis in lorem.
+              Vestibulum tempus blandit nisi, eu bibendum massa ultrices at.
+              In facilisis, tellus eget vestibulum auctor, sem enim mattis justo, eu laoreet elit purus eget velit.
+              Donec sem tortor, sagittis sed dictum convallis, molestie in dui. Nam pretium tempor lobortis.
+              Sed hendrerit nulla quis neque iaculis posuere. Duis eget placerat sem, sit amet cursus mauris.
+              Aliquam tristique, ex nec accumsan ornare, mi nibh condimentum est, a venenatis sapien nisi in tortor.
+              Sed molestie, odio rhoncus scelerisque accumsan, dui dui euismod dolor, at porta eros magna nec erat.</p>
 
-              <div class="code">
-                <p>Code test</p>
-                <p>1234<p/>
-              </div>
-            </section>
+            <div class="code">
+              <p>Code test</p>
+              <p>1234<p/>
+            </div>
+          </section>
 
-            <hr />
+          <hr />
 
-            <section id="more">
-              <header>
-                <h1><a href="#more">More!</a></h1>
-              </header>
+          <section id="more">
+            <header>
+              <h1><a href="#more">More!</a></h1>
+            </header>
 
-              <ul>
-                <li>More</li>
-              </ul>
-            </section>
-          </main>
-        </div>
+            <ul>
+              <li>More</li>
+            </ul>
+          </section>
+        </main>
       </div>
     </div>
       <div class="site-footer-container">
@@ -152,6 +160,7 @@
             <p><b>Links</b></p>
             <ul>
               <li><a href="documents/">Project documents</a></li>
+              <li><a href="https://github.com/build-a-pc/build-a-pc.github.io">Repository</a></li>
             </ul>
           </div>
 
