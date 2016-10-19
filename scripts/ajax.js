@@ -22,9 +22,11 @@ const META_SECTION_NAME = "section_name";
 const META_SHOW_NAVBAR = "show_navbar";
 const META_SNOW_NAVBAR_PAGE = "show_navbar_page";
 
+var currentUrlQuery = 0;
+
 // Update when window is loaded.
 window.addEventListener("load", function() {
-  gotoContentPage(window.location.href);
+  gotoContentPage(window.location.href, true);
 });
 
 // Update when history state is popped.
@@ -36,27 +38,30 @@ window.addEventListener("popstate", function() {
 window.addEventListener("click", function(event) {
   var target = event.target;
   if (target.nodeName == "A" || target.nodeName == "a") {
-    if (target.host == window.location.host &&
-      target.protocol == window.location.protocol &&
+    if (target.origin == window.location.origin &&
       target.pathname == window.location.pathname) {
         event.preventDefault();
-        gotoContentPage(target.href);
+        if (target.search != window.location.search) {
+          gotoContentPage(target.href, true);
+        } else if (target.hash != window.location.hash) {
+          window.location.hash = target.hash;
+        }
       }
   }
 });
 
 // TMP example
 window.addEventListener(EVENT_ON_LOAD, function() {
-  console.log("EVENT_ON_LOAD");
+  //console.log("EVENT_ON_LOAD");
 });
 
 // TMP example
 window.addEventListener(EVENT_ON_LOADED, function(event) {
-  console.log("EVENT_ON_LOADED: page=" + event.detail.page);
+  //console.log("EVENT_ON_LOADED: page=" + event.detail.page);
 });
 
 // Loads content page on given URL.
-function gotoContentPage(url) {
+function gotoContentPage(url, force=false) {
   var arguments = getArguments(url);
   var section = arguments["section"];
   var page = arguments["page"];
@@ -64,15 +69,17 @@ function gotoContentPage(url) {
   var pageUrlQuery = getPageUrlQuery(section, page);
   var browserUrlQuery = window.location.search;
 
-  if (pageUrlQuery != browserUrlQuery) {
+  if (force || pageUrlQuery != browserUrlQuery) {
     changeBrowserUrl(window.location.pathname + pageUrlQuery);
   }
 
-  if (window.dispatchEvent(new Event(EVENT_ON_LOAD))) {
-    unloadOldContent();
-    loadContentFile(fileUrl);
-  } else {
-    console.log("Warning: Page load prevented.");
+  if (force || pageUrlQuery != currentUrlQuery) {
+    if (window.dispatchEvent(new Event(EVENT_ON_LOAD))) {
+      unloadOldContent();
+      loadContentFile(fileUrl);
+    } else {
+      console.log("Warning: Page load prevented.");
+    }
   }
 }
 
