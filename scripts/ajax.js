@@ -22,7 +22,7 @@ const META_SECTION_NAME = "section_name";
 const META_SHOW_NAVBAR = "show_navbar";
 const META_SNOW_NAVBAR_PAGE = "show_navbar_page";
 
-var currentUrlQuery = 0;
+let currentUrlQuery = "";
 
 // Update when window is loaded.
 window.addEventListener("load", function() {
@@ -35,50 +35,39 @@ window.addEventListener("popstate", function() {
 });
 
 // Catch mouse clicks AJAX can handle.
-window.addEventListener("click", function(event) {
-  var target = event.target;
-  if (target.nodeName == "A" || target.nodeName == "a") {
-    if (target.origin == window.location.origin &&
-      target.pathname == window.location.pathname) {
-        event.preventDefault();
-        if (target.search != window.location.search) {
+window.addEventListener("click", function(ev) {
+  let target = ev.target;
+  if (target.nodeName === "A") {
+    if (target.origin === window.location.origin &&
+      target.pathname === window.location.pathname) {
+        ev.preventDefault();
+        if (target.search !== window.location.search) {
           gotoContentPage(target.href, true);
-        } else if (target.hash != window.location.hash) {
+        } else if (target.hash !== window.location.hash) {
           window.location.hash = target.hash;
         }
       }
   }
 });
 
-// TMP example
-window.addEventListener(EVENT_ON_LOAD, function() {
-  //console.log("EVENT_ON_LOAD");
-});
-
-// TMP example
-window.addEventListener(EVENT_ON_LOADED, function(event) {
-  //console.log("EVENT_ON_LOADED: page=" + event.detail.page);
-});
-
 // Loads content page on given URL.
 function gotoContentPage(url, force=false) {
-  var arguments = getArguments(url);
-  var section = arguments["section"];
-  var page = arguments["page"];
-  var fileUrl = getFileUrl(section, page);
-  var pageUrlQuery = getPageUrlQuery(section, page);
-  var browserUrlQuery = window.location.search;
+  let args = getArguments(url);
+  let section = args["section"];
+  let page = args["page"];
+  let fileUrl = getFileUrl(section, page);
+  let pageUrlQuery = getPageUrlQuery(section, page);
+  let browserUrlQuery = window.location.search;
 
-  if (force || pageUrlQuery != browserUrlQuery) {
-    changeBrowserUrl(window.location.pathname + pageUrlQuery);
-  }
-
-  if (force || pageUrlQuery != currentUrlQuery) {
-    if (window.dispatchEvent(new Event(EVENT_ON_LOAD))) {
+  if (force || pageUrlQuery !== browserUrlQuery) {
+    if (window.dispatchEvent(new Event(EVENT_ON_LOAD, {cancelable: true}))) {
+      if (pageUrlQuery !== browserUrlQuery) {
+        changeBrowserUrl(window.location.pathname + pageUrlQuery);
+      }
       unloadOldContent();
       loadContentFile(fileUrl);
     } else {
-      console.log("Warning: Page load prevented.");
+      console.log("[AJAX] Prevented: " + fileUrl);
     }
   }
 }
@@ -93,16 +82,16 @@ function loadContentFile(fileUrl) {
    * - Return true if success, false if file not found.
    */
 
-  var request = new XMLHttpRequest();
+  let request = new XMLHttpRequest();
   request.onreadystatechange = function() {
-    if (request.readyState == XMLHttpRequest.DONE) {
+    if (request.readyState === XMLHttpRequest.DONE) {
       switch (request.status) {
         case 200:
           loadNewContent(request.responseText);
-          console.log("[AJAX] Page loaded: " + fileUrl);
+          console.log("[AJAX] Loaded: " + fileUrl);
           break;
         case 404:
-          if (fileUrl != ERROR_404_PATH) {
+          if (fileUrl !== ERROR_404_PATH) {
             console.log("[AJAX] Error: 404 File not found: " + fileUrl);
             loadContentFile(ERROR_404_PATH);
           } else {
@@ -120,29 +109,29 @@ function loadContentFile(fileUrl) {
 }
 
 function unloadOldContent() {
-  var container = document.getElementById(ID_CONTENT);
+  let container = document.getElementById(ID_CONTENT);
   while (container.firstChild) {
     container.removeChild(container.firstChild);
   }
 
   // TODO Add "loading screen"
-  var pNode = document.createElement("p");
-  var textNode = document.createTextNode("Loading...");
+  let pNode = document.createElement("p");
+  let textNode = document.createTextNode("Loading...");
   pNode.appendChild(textNode);
   container.appendChild(pNode);
 }
 
 function loadNewContent(response) {
-  var container = document.getElementById(ID_CONTENT);
+  let container = document.getElementById(ID_CONTENT);
   while (container.firstChild) {
     container.removeChild(container.firstChild);
   }
 
-  var dom = document.createElement("html");
+  let dom = document.createElement("html");
   dom.innerHTML = response;
   container.innerHTML = dom.getElementsByTagName("body")[0].innerHTML;
 
-  var info = getMetaInfo(dom);
+  let info = getMetaInfo(dom);
   updateTitle(info[META_TITLE]);
 
   window.dispatchEvent(new CustomEvent(EVENT_ON_LOADED, {"detail": info}));
@@ -150,7 +139,7 @@ function loadNewContent(response) {
 
 // Updates window title.
 function updateTitle(title) {
-  var element = document.getElementsByTagName("title")[0];
+  let element = document.getElementsByTagName("title")[0];
   if (title) {
     element.innerHTML = TITLE + " - " + title
   } else {
@@ -160,12 +149,12 @@ function updateTitle(title) {
 
 // Gets meta info and title from DOM.
 function getMetaInfo(dom) {
-  var info = [];
+  let info = [];
   info[META_TITLE] = dom.getElementsByTagName("title")[0].innerHTML;
   metas = dom.getElementsByTagName("meta");
-  for (var i = 0; i < metas.length; i++) {
-    var metaName = metas[i].getAttribute("name")
-    var metaContent = metas[i].getAttribute("content");
+  for (let i = 0; i < metas.length; i++) {
+    let metaName = metas[i].getAttribute("name")
+    let metaContent = metas[i].getAttribute("content");
     switch(metaName) {
       case META_DESCRIPTION:
       case META_AUTHOR:
@@ -197,13 +186,13 @@ function getPageUrlQuery(section, page) {
    * - Sections and pages with same name has no name in query.
    */
 
-  var query = "";
+  let query = "";
   if (section) {
     query = "?section=" + section;
-    if (page && section != page) {
+    if (page && section !== page) {
       query += "&page=" + page;
     }
-  } else if (page && page != "home") {
+  } else if (page && page !== "home") {
     query = "?page=" + page;
   }
   return query;
@@ -219,7 +208,7 @@ function getFileUrl(section, page) {
    * - If section and page: No problem.
    */
 
-  var path = "pages/";
+  let path = "pages/";
   if (section && page) {
     path += section + '/' + page;
   } else if (!section && page) {
@@ -236,13 +225,36 @@ function getFileUrl(section, page) {
 // Gets arguments from given URL.
 function getArguments(url) {
   argumentsInQueryRegex = /(?:[\?\&]([a-zA-Z0-9]+(?:=[a-zA-Z0-9]*)?))/g;
-  var element = document.createElement("a");
+  let element = document.createElement("a");
   element.href = url;
-  var query = element.search;
-  var arguments = [];
+  let query = element.search;
+  let args = [];
   while (match = argumentsInQueryRegex.exec(query)) {
-    var parts = match[1].split('=', 2);
-    arguments[parts[0]] = (parts.length > 1 ? parts[1] : null);
+    let parts = match[1].split('=', 2);
+    args[parts[0]] = (parts.length > 1 ? parts[1] : null);
   }
-  return arguments;
+  return args;
 }
+
+// TMP onload example
+window.addEventListener(EVENT_ON_LOAD, function(ev) {
+  //console.log("EVENT_ON_LOAD");
+  //ev.preventDefault();
+});
+
+// TMP onloaded example
+window.addEventListener(EVENT_ON_LOADED, function(ev) {
+  /*
+  console.log("EVENT_ON_LOADED");
+  let options = ev.detail;
+  console.log("title=" + options.title);
+  console.log("description=" + options.description);
+  console.log("author=" + options.author);
+  console.log("page=" + options.page);
+  console.log("section=" + options.section);
+  console.log("page_name=" + options.page_name);
+  console.log("section_name=" + options.section_name);
+  console.log("show_navbar=" + options.show_navbar);
+  console.log("show_navbar_page=" + options.show_navbar_page);
+  */
+});
