@@ -20,7 +20,7 @@ const META_SECTION = "section";
 const META_PAGE_NAME = "page_name";
 const META_SECTION_NAME = "section_name";
 const META_SHOW_BREADCRUMBS = "show_breadcrumbs";
-const META_SNOW_PAGE_BREADCRUMB = "show_page_breadcrumbs";
+const META_SHOW_PAGE_BREADCRUMB = "show_page_breadcrumb";
 
 let currentUrlQuery = "";
 
@@ -244,7 +244,7 @@ window.addEventListener(EVENT_ON_LOAD, function(ev) {
 
 // TMP onloaded example
 window.addEventListener(EVENT_ON_LOADED, function(ev) {
-
+  /*
   console.log("EVENT_ON_LOADED");
   let options = ev.detail;
   console.log("title=" + options.title);
@@ -256,5 +256,5 @@ window.addEventListener(EVENT_ON_LOADED, function(ev) {
   console.log("section_name=" + options.section_name);
   console.log("show_breadcrumbs=" + options.show_breadcrumbs);
   console.log("show_page_breadcrumb=" + options.show_page_breadcrumb);
-
+  */
 });
