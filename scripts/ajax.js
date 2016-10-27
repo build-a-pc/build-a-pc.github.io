@@ -19,8 +19,8 @@ const META_PAGE = "page";
 const META_SECTION = "section";
 const META_PAGE_NAME = "page_name";
 const META_SECTION_NAME = "section_name";
-const META_SHOW_NAVBAR = "show_navbar";
-const META_SNOW_NAVBAR_PAGE = "show_navbar_page";
+const META_SHOW_BREADCRUMBS = "show_breadcrumbs";
+const META_SNOW_PAGE_BREADCRUMB = "show_page_breadcrumbs";
 
 let currentUrlQuery = "";
 
@@ -162,8 +162,8 @@ function getMetaInfo(dom) {
       case META_SECTION:
       case META_PAGE_NAME:
       case META_SECTION_NAME:
-      case META_SHOW_NAVBAR:
-      case META_SNOW_NAVBAR_PAGE:
+      case META_SHOW_BREADCRUMBS:
+      case META_SHOW_PAGE_BREADCRUMB:
         info[metaName] = metaContent;
         break;
       default:
@@ -244,7 +244,7 @@ window.addEventListener(EVENT_ON_LOAD, function(ev) {
 
 // TMP onloaded example
 window.addEventListener(EVENT_ON_LOADED, function(ev) {
-  /*
+
   console.log("EVENT_ON_LOADED");
   let options = ev.detail;
   console.log("title=" + options.title);
@@ -254,7 +254,7 @@ window.addEventListener(EVENT_ON_LOADED, function(ev) {
   console.log("section=" + options.section);
   console.log("page_name=" + options.page_name);
   console.log("section_name=" + options.section_name);
-  console.log("show_navbar=" + options.show_navbar);
-  console.log("show_navbar_page=" + options.show_navbar_page);
-  */
+  console.log("show_breadcrumbs=" + options.show_breadcrumbs);
+  console.log("show_page_breadcrumb=" + options.show_page_breadcrumb);
+
 });
