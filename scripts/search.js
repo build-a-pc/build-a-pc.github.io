@@ -34,7 +34,7 @@ function loadDoc(searchString,page) {
 		}
     }
   };
-  xhttp.open("GET", "https://build\-a\-pc\.github\.io\\content.txt", true);
+  xhttp.open("GET", "https://build\-a\-pc\.github\.io\\test.txt", true);
   xhttp.send();
 }
 
