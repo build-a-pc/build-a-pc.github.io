@@ -24,31 +24,41 @@ const META_SHOW_PAGE_BREADCRUMB = "show_page_breadcrumb";
 
 let currentUrlQuery = "";
 
-// Update when window is loaded.
+// Called when browser is resized.
+window.addEventListener("resize", function() { updateContentContainerHeight(); });
+
+// Called when window is loaded.
 window.addEventListener("load", function() {
+  updateContentContainerHeight();
   gotoContentPage(window.location.href, true);
 });
 
-// Update when history state is popped.
-window.addEventListener("popstate", function() {
-  gotoContentPage(window.location.href);
-});
+// Called when history state is popped.
+window.addEventListener("popstate", function() { gotoContentPage(window.location.href); });
 
-// Catch mouse clicks AJAX can handle.
+// Catches mouse clicks AJAX can handle.
 window.addEventListener("click", function(ev) {
   let target = ev.target;
-  if (target.nodeName === "A") {
+  if (!ev.defaultPrevented && target.nodeName === "A") {
     if (target.origin === window.location.origin &&
-      target.pathname === window.location.pathname) {
-        ev.preventDefault();
-        if (target.search !== window.location.search) {
-          gotoContentPage(target.href, true);
-        } else if (target.hash !== window.location.hash) {
-          window.location.hash = target.hash;
-        }
+        target.pathname === window.location.pathname) {
+      ev.preventDefault();
+      if (target.search !== window.location.search) {
+        gotoContentPage(target.href, true);
+      } else if (target.hash !== window.location.hash) {
+        window.location.hash = target.hash;
       }
+    }
   }
 });
+
+// Updates content container height.
+function updateContentContainerHeight() {
+  let header = document.getElementById("site-header-container");
+  let center = document.getElementById("site-center");
+  let footer = document.getElementById("site-footer-container");
+  center.style.minHeight = String(window.innerHeight - header.clientHeight - footer.clientHeight) + "px";
+}
 
 // Loads content page on given URL.
 function gotoContentPage(url, force=false) {
@@ -108,19 +118,20 @@ function loadContentFile(fileUrl) {
   request.send();
 }
 
+// Unloads previous page and loads loading screen.
 function unloadOldContent() {
   let container = document.getElementById(ID_CONTENT);
   while (container.firstChild) {
     container.removeChild(container.firstChild);
   }
 
-  // TODO Add "loading screen"
   let pNode = document.createElement("p");
   let textNode = document.createTextNode("Loading...");
   pNode.appendChild(textNode);
   container.appendChild(pNode);
 }
 
+// Loads the new content from the AJAX response into the header.
 function loadNewContent(response) {
   let container = document.getElementById(ID_CONTENT);
   while (container.firstChild) {

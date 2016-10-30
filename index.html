@@ -12,6 +12,7 @@
     <script src="scripts/breadcrumbs.js" defer></script>
     <script src="scripts/search.js" defer></script>
     <script src="scripts/highlighting.js" defer></script>
+    <script src="scripts/navbar.js" defer></script>
     <script src="scripts/beginner_expert.js" defer></script>
     <script src="scripts/search.js" defer></script>
 
@@ -36,63 +37,63 @@
   </head>
 
   <body>
-    <div class="site-container">
-    <div class="site-header-container">
-      <div class="site-header">
-        <img class="site-header-logo" src="images/logo/logo_white_64.png" alt="logo" />
-        <p class="site-header-title"><a href=".">Build-a-PC</a></p>
-        <p class="site-header-sub-title">by Ad Infinitum</p>
+    <div id="site-container">
+    <div id="site-header-container">
+      <div id="site-header">
+        <img id="site-header-logo" src="images/logo/logo_white_64.png" alt="logo" />
+        <p id="site-header-title"><a href=".">Build-a-PC</a></p>
+        <p id="site-header-sub-title">by Ad Infinitum</p>
       </div>
     </div>
 
-    <div class="site-center-container">
-      <div class="site-center">
-        <div class="navbar">
+    <div id="site-center-container">
+      <div id="site-center">
+        <div id="navbar">
+          <a id="navbar-show" class="top" href="#navbar">Show navigation</a>
+          <a id="navbar-hide" class="top" href="#">Hide navigation</a>
           <ul>
-            <li class="dropdown">
-              <a href="?section=parts" class="dropbutton">Parts</a>
-              <div class="dropdown-content">
-                <a href="#">Motherboard and CPU</a>
-                <a href="#">RAM and GPU</a>
-                <a href="#">Storage, network card, sound card</a>
-                <a href="#">Cooling, PSU, case</a>
-                <a href="#">Accessories</a>
-              </div>
+            <li>
+              <a class="top" href="#">Parts</a>
+              <ul>
+                <li><a href="?section=parts">Parts</a></li>
+                <li><a href="#">Motherboard and CPU</a></li>
+                <li><a href="#">RAM and GPU</a></li>
+                <li><a href="#">Storage, network card, sound card</a></li>
+                <li><a href="#">Cooling, PSU, case</a></li>
+                <li><a href="#">Accessories</a></li>
+              </ul>
             </li>
 
-            <br class="one" />
-
-            <li class="dropdown">
-              <a href="?section=vendors" class="dropbutton">Part Vendors</a>
-              <div class="dropdown-content">
-                <a href="#">Part Vendors</a>
-              </div>
+            <li>
+              <a class="top" href="#">Part Vendors</a>
+              <ul>
+                <li><a href="?section=vendors">Part Vendors</a></li>
+                <li><a href="#">... more pages?</a></li>
+              </ul>
             </li>
 
-            <br class="two" />
-
-            <li class="dropdown">
-              <a href="?section=oss" class="dropbutton">Operating Systems</a>
-              <div class="dropdown-content">
-                <a href="#">Windows</a>
-                <a href="#">Linux</a>
-                <a href="#">Macintosh</a>
-              </div>
+            <li>
+              <a class="top" href="#">Operating Systems</a>
+              <ul>
+                <li><a href="?section=oss">Operating Systems</a></li>
+                <li><a href="#">Windows</a></li>
+                <li><a href="#">Linux</a></li>
+                <li><a href="#">Macintosh</a></li>
+              </ul>
             </li>
 
-            <br class="three" />
-
-            <li class="dropdown">
-              <a href="?section=assembly" class="dropbutton">Assembling the PC</a>
-              <div class="dropdown-content">
-                <a href="#">Hardware</a>
-                <a href="#">Software</a>
-              </div>
+            <li>
+              <a class="top" href="#">Assembling the PC</a>
+              <ul>
+                <li><a href="?section=assembly">Assembling the PC</a></li>
+                <li><a href="#">Hardware</a></li>
+                <li><a href="#">Software</a></li>
+              </ul>
             </li>
           </ul>
         </div>
 
-        <div class="breadcrumbs">
+        <div id="breadcrumbs">
           <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">Parts</a></li>
@@ -103,8 +104,8 @@
         <main id="content" />
       </div>
     </div>
-      <div class="site-footer-container">
-        <div class="site-footer">
+      <div id="site-footer-container">
+        <div id="site-footer">
           <div class="site-footer-box">
             <p><b>About</b></p>
             <p>Search</p>
@@ -121,7 +122,7 @@
             </ul>
           </div>
 
-          <p class="copyright">Copyright &copy; 2016 <a href="https://github.com/build-a-pc">github.com/build-a-pc</a></p>
+          <p id="copyright">Copyright &copy; 2016 <a href="https://github.com/build-a-pc">github.com/build-a-pc</a></p>
         </div>
       </div>
     </div>
