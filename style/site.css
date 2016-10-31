@@ -1,3 +1,10 @@
+/*
+FILE NAME: site.css
+WRITTEN BY: H&aring;vard, Runar, Petter, Thomas
+WHEN: 2016 autumn
+PORPOSE: Contains all non-default and non-custom styling for the site.
+*/
+
 /* Default style for Build-a-PC by Ad Infinitum */
 
 /* Theme:
@@ -435,6 +442,7 @@ code {
     height: auto;
     display: none;
     position: absolute;
+    z-index: 10;
     left: 0;
     right: 0;
     background-color: #555;

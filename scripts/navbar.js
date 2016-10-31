@@ -1,7 +1,13 @@
-// Navigation bar with dropdown menus and stuff //
+/*
+FILE NAME: navbar.js
+WRITTEN BY: H&aring;vard
+WHEN: 2016 autumn
+PURPOSE: Makes the navbar active and responsive.
+*/
 
 const MOBILE_MENU_MAX_WIDTH = 899;
 
+// Adds all the required event listeners for the navbar.
 window.addEventListener("resize", function() { onResize(); });
 document.addEventListener("click", function(ev) { onDocumentClick(ev); });
 document.querySelector("#navbar > ul").addEventListener("click", function(ev) { onNavbarClick(ev); });
@@ -11,15 +17,18 @@ document.querySelector("#navbar-hide").addEventListener("click", function(ev) { 
 let shownList = null;
 let isMobileMenuShown = false;
 
+// Called then the window is resized.
 function onResize() {
   updateMobileMenu();
 }
 
+// Called when something the document is clicked.
 function onDocumentClick(ev) {
   showList(null);
   showMobileMenu(false);
 }
 
+// Called when something in the navbar is clicked. Stops propagation so that onDocumentCLick isn't called.
 function onNavbarClick(ev) {
   let target = ev.target;
   if (!ev.defaultPrevented && target.nodeName === "A") {
@@ -32,6 +41,7 @@ function onNavbarClick(ev) {
   }
 }
 
+// Called when mobile menu is clicked.
 function onMobileMenuClick(ev) {
   let target = ev.target;
   if (!ev.defaultPrevented && target.nodeName === "A") {
@@ -42,6 +52,7 @@ function onMobileMenuClick(ev) {
   }
 }
 
+// Hides previous list and shows new list if list is not null.
 function showList(list) {
   let oldShownList = shownList;
   if (shownList) {
@@ -54,11 +65,13 @@ function showList(list) {
   }
 }
 
+// Shows or hides mobile menu if appropriate to show.
 function showMobileMenu(show) {
   isMobileMenuShown = show;
   updateMobileMenu();
 }
 
+// Updates mobile menu; meaning open, close or close because navbar is too big.
 function updateMobileMenu() {
   let navbarTopList = document.querySelector("#navbar > ul");
   let navbarShow = document.getElementById("navbar-show");

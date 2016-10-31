@@ -1,4 +1,9 @@
-// AJAX and stuff //
+/*
+FILE NAME: ajax.js
+WRITTEN BY: H&aring;vard
+WHEN: 2016 autumn
+PURPOSE: Takes care of loading content pages and other core functionality.
+*/
 
 /*
  * Events (dispatched on window):
@@ -69,13 +74,14 @@ function gotoContentPage(url, force=false) {
   let pageUrlQuery = getPageUrlQuery(section, page);
   let browserUrlQuery = window.location.search;
 
-  if (force || pageUrlQuery !== browserUrlQuery) {
+  if (force || pageUrlQuery !== currentUrlQuery || pageUrlQuery !== browserUrlQuery) {
     if (window.dispatchEvent(new Event(EVENT_ON_LOAD, {cancelable: true}))) {
       if (pageUrlQuery !== browserUrlQuery) {
         changeBrowserUrl(window.location.pathname + pageUrlQuery);
       }
       unloadOldContent();
       loadContentFile(fileUrl);
+      currentUrlQuery = pageUrlQuery;
     } else {
       console.log("[AJAX] Prevented: " + fileUrl);
     }

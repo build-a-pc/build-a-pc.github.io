@@ -1,5 +1,5 @@
 # Build a PC
-By Ad Infinitum. A NTNU IT2805 Web Technologies project.
+A NTNU IT2805 Web Technologies project by H&aring;vard, Runar, Petter, Thomas (team Ad Infinitum).
 
 ## Links
 + [Website](https://build-a-pc.github.io/)
