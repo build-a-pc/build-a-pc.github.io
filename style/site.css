@@ -380,12 +380,16 @@ code {
   right: 0;
 }
 
-#site-footer #copyright {
+#copyright {
   position: absolute;
   bottom: 0;
   width: 100%;
   text-align: center;
   margin: 5px;
+}
+
+#search {
+  width: 100%;
 }
 
 /* Media styles */
