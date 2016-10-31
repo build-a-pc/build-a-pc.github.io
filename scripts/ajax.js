@@ -241,7 +241,7 @@ function getFileUrl(section, page) {
 
 // Gets arguments from given URL.
 function getArguments(url) {
-  argumentsInQueryRegex = /(?:[\?\&]([a-zA-Z0-9]+(?:=[a-zA-Z0-9]*)?))/g;
+  argumentsInQueryRegex = /(?:[\?\&]([a-zA-Z0-9_]+(?:=[a-zA-Z0-9_]*)?))/g;
   let element = document.createElement("a");
   element.href = url;
   let query = element.search;
