@@ -117,7 +117,7 @@ PORPOSE: Contains layout, includes everything, loads content pages via AJAX.
         <div id="site-footer">
           <div class="site-footer-box">
             <p><b>Search</b></p>
-            <input id="search" type="text" name="search" placeholder="Search ...">
+            <input id="search" type="text" name="search" placeholder="Search ..." oninput="start()" onblur="stop()" onfocus="start()">
           </div>
 
           <div class="site-footer-box">

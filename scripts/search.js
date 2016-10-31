@@ -1,23 +1,67 @@
 // Search //
 
-var Timer = setInterval(checkTextBox, 1000);
+var Timer;
 var same = "";
 var count = 0;
-var plus = 1;
+var started = false;
+var parse = [];
+var soke = "";
+var pages = [];
+var numberOfPages = 0;
+var rankedHits = [];
+loadDoc(pages,'content.txt',0,'txt');
 
-function matchFound(searchString,page){
+function close1Index(){
 	
 }
 
-function loadDoc(searchString,page) {
+function close2Index(){
+	
+}
+
+function wordsOnSamePage(){
+	
+}
+
+function wordOnSamePage(){
+	
+}
+
+function settning(splitWord){
+	if(!close1Index()){
+		if(!close2Index()){
+			if(!wordsOnSamePage()){
+				wordOnSamePage();
+			}
+		}
+	}
+}
+
+function oneWord(){
+	
+}
+
+function moreWords(searchString){
+	var splitWord = searchString.value.split(" ");
+	if(splitWord > 1){
+		settning(splitWord);
+	}
+	if(splitWord = 1){
+		oneWord(splitWord);
+	}
+}
+
+function loadDoc(listSave,page,numberOfPage) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
+		var page1 = [];
 		var fileString = this.responseText;
-		var cleanString = fileString.replace(/[\?\|!"#¤%&\/\(\)=\+-\.,_'¨\^}{\[\]\$£@:;*`~€<>§]| (?= )/g, "")
-		var word = []
-		var lines = cleanString.split("\n");
-		var words = []
+		var cleanString = fileString.replace(/[\?\|!"#¤%&\/\(\)=\+-\.,_'¨\^}{\[\]\$£@:;*`~€<>§]| (?= )/g, " ");
+		var cleanerString = cleanString.replace(/[A-Z]/gi, function myFunction(x){return x.toLowerCase();});
+		var word = [];
+		var lines = cleanerString.split("\n");
+		var words = [];
 		for (var i = 0; i < lines.length; i++){
 			words.push(lines[i].split(" "));
 		}
@@ -26,15 +70,13 @@ function loadDoc(searchString,page) {
 				word.push(words[i][j]);
 			}
 		}
-		for (var i = 0; i < word.length; i++){
-			if(word[i]==searchString){
-				console.log('We have a match');
-				matchFound(searchString,page);
-			}
+		for(var i = 0; i < word.length; i++){
+			page1[i] = word[i];
 		}
-    }
+		listSave[numberOfPage] = page1;
+	}
   };
-  xhttp.open("GET", "https://build\-a\-pc\.github\.io\\test.txt", true);
+  xhttp.open("GET", "https://build\-a\-pc\.github\.io\\"+page, true);
   xhttp.send();
 }
 
@@ -44,16 +86,42 @@ function checkTextBox(){
 	if(searchString.value !== ''){
 		console.log(searchString.value);
 		if(same == searchString.value){
-			count = count + plus;
+			console.log(count);
+			count = count+1;
 		}
 		same = searchString.value;
 	}
 	if(count == 2){
-		clearInterval(setInterval);
+		clearInterval(Timer);
+		started = false;
 		console.log('3 times');
 		same = "";
 		count = 0;
-		//readTextFile("https://build\-a\-pc\.github\.io\\content.txt")//
-		loadDoc(searchString.value,page);
+		soke = searchString;
+		var cleanSearchString = searchString.value.replace(/[A-Z]/gi, function myFunction(x){return x.toLowerCase();});
+		console.log(cleanSearchString);
+		for(i = 0; i < parse.length; i++){
+			for(var j = 0; j < parse[i].length; j++){
+				if(cleanSearchString==parse[i][j]){
+					console.log('We have a match at page: ' + pages[0][i] +" " + parse[i][j]);
+				}
+			}
+			
+		}
 	}
 };
+
+function start(){
+	if(!started){
+		started = true;
+		Timer = setInterval(checkTextBox, 1000);
+		for(var i = 0; i < pages[0].length;i++){
+			loadDoc(parse,'pages\\'+pages[0][i]+'.inc.html',i,'html')
+		}
+	}
+}
+
+function stop(){
+	started = false;
+	clearInterval(Timer);
+}
