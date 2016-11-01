@@ -66,7 +66,7 @@ function loadDoc(listSave,page,numberOfPage) {
     if (this.readyState == 4 && this.status == 200) {
 		var page1 = [];
 		var fileString = this.responseText;
-		var cleanString = fileString.replace(/[\?\|!"#¤%&\/\(\)=\+-\.,_'¨\^}{\[\]\$£@:;*`~€<>§]| (?= )/g, " ");
+		var cleanString = fileString.replace(/[\?\|!"#¤%&\/\(\)=\+-\.,'¨\^}{\[\]\$£@:;*`~€<>§]| (?= )/g, " ");
 		var cleanerString = cleanString.replace(/[A-Z]/gi, function myFunction(x){return x.toLowerCase();});
 		var word = [];
 		var lines = cleanerString.split("\n");
