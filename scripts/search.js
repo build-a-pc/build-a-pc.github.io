@@ -13,10 +13,10 @@ loadDoc(pages,'content.txt',0,'txt');
 
 function dropDown(whatPage,splitWord){
 	var div = document.getElementById('dropdown');
-	div.innerHTML = ""
+	div.innerHTML = "";
 	for(var i = 0; i < whatPage.length; i++){
 		var a = document.createElement("a");
-		a.setAttribute("href",'#'+whatPage[i]);
+		a.setAttribute("href",'?'+whatPage[i]);
 		a.innerHTML = splitWord[0];
 		div.appendChild(a);
 	}
@@ -114,13 +114,13 @@ function checkTextBox(){
 		soke = searchString;
 		var cleanSearchString = searchString.value.replace(/[A-Z]/gi, function myFunction(x){return x.toLowerCase();});
 		moreWords(cleanSearchString);
-		for(i = 0; i < parse.length; i++){
+		/**for(i = 0; i < parse.length; i++){
 			loop3:for(var j = 0; j < parse[i].length; j++){
 				if(cleanSearchString==parse[i][j]){
 					console.log('We have a match at page: ' + pages[0][i] +" " + parse[i][j]);
 					break loop3;
 				}
-			}
+			}**/
 			
 		}
 	}
