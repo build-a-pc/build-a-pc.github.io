@@ -11,44 +11,53 @@ var numberOfPages = 0;
 var rankedHits = [];
 loadDoc(pages,'content.txt',0,'txt');
 
-function close1Index(){
-	
+function dropDown(whatPage,splitWord){
+	var div = document.getElementById('dropdown');
+	div.appendChild('t');
+	document.getElementById("dropdown").classList.toggle("show");
 }
 
-function close2Index(){
-	
-}
 
-function wordsOnSamePage(){
-	
-}
-
-function wordOnSamePage(){
-	
-}
-
-function settning(splitWord){
-	if(!close1Index()){
-		if(!close2Index()){
-			if(!wordsOnSamePage()){
-				wordOnSamePage();
+function close1Index(splitWord){
+	var hits = [];
+	for(var h = 0; h < splitWord.length; h++){
+		hits[h]=[];
+		var number = 0;
+		for(var i = 0; i < parse.length; i++){
+		loop1:for(var j = 0; j < parse[i].length; j++){
+				if(splitWord[h]==parse[i][j]){
+					console.log('hit')
+					hits[h][number] = pages[0][i];
+					number = number + 1;
+					break loop1;
+				}
 			}
 		}
 	}
-}
-
-function oneWord(){
-	
+	hits.sort();
+	var number1 = 0;
+	var whatPage = [];
+	for(var h = 0; h < hits[0].length; h++){
+		whatPage[h] = hits[0][h];
+		number1 = number1 + 1;
+		for(var i = 1; i < hits.length; i++){
+			loop2:for(var j = 0; j < hits[i].length; j++){
+				if(hits[0][h] == hits[i][j]){
+					number1 = number1 + 1;
+					break loop2;
+				}
+			}
+		}
+	}
+	if((number1/whatPage.length)==splitWord.length){
+		console.log('Hurra')
+	}
+	dropDown(whatPage,splitWord);
 }
 
 function moreWords(searchString){
-	var splitWord = searchString.value.split(" ");
-	if(splitWord > 1){
-		settning(splitWord);
-	}
-	if(splitWord = 1){
-		oneWord(splitWord);
-	}
+	var splitWord = searchString.split(" ");
+	close1Index(splitWord);
 }
 
 function loadDoc(listSave,page,numberOfPage) {
@@ -84,9 +93,7 @@ function checkTextBox(){
 	var page = 1;
 	var searchString = document.getElementById('search');
 	if(searchString.value !== ''){
-		console.log(searchString.value);
 		if(same == searchString.value){
-			console.log(count);
 			count = count+1;
 		}
 		same = searchString.value;
@@ -99,11 +106,12 @@ function checkTextBox(){
 		count = 0;
 		soke = searchString;
 		var cleanSearchString = searchString.value.replace(/[A-Z]/gi, function myFunction(x){return x.toLowerCase();});
-		console.log(cleanSearchString);
+		moreWords(cleanSearchString);
 		for(i = 0; i < parse.length; i++){
-			for(var j = 0; j < parse[i].length; j++){
+			loop3:for(var j = 0; j < parse[i].length; j++){
 				if(cleanSearchString==parse[i][j]){
 					console.log('We have a match at page: ' + pages[0][i] +" " + parse[i][j]);
+					break loop3;
 				}
 			}
 			

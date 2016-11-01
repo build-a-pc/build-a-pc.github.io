@@ -1,1 +1,1 @@
-home sitemap template assembly\\assembly
+home sitemap template assembly\\assembly assembly\\hardware assembly\\quiz assembly\\software oss\\linux oss\\oss oss\\osx oss\\quiz oss\\windows parts\\accessories parts\\cooling\_psu\_case parts\\cpu\_ram parts\\mb\_gpu parts\\parts parts\\quiz parts\\storage\_nic\_sc vendors\\quiz vendors\\vendors

@@ -29,6 +29,18 @@ PORPOSE: Contains layout, includes everything, loads content pages via AJAX.
     <link rel="stylesheet" href="style/site.css" />
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Slab">
+	<style>	
+	.dropdown {
+		display: none;
+		position: absolute;
+		
+	}
+
+	.dropdown a {
+		display: block;
+	}
+		
+	</style>
 
     <!-- Favicon and stuff -->
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png?v=Om5QWMBdJg">
@@ -124,6 +136,9 @@ PORPOSE: Contains layout, includes everything, loads content pages via AJAX.
           <div class="site-footer-box">
             <p><b>Search</b></p>
             <input id="search" type="text" name="search" placeholder="Search ..." oninput="start()" onblur="stop()" onfocus="start()" />
+			<div id="dropdown" class="dropdown">
+				<a href="#tets">Test</a>
+			</div>
           </div>
 
           <div class="site-footer-box">
