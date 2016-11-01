@@ -450,7 +450,7 @@ code {
 
   #site-center-container {
     position: relative;
-    padding-bottom: 400px; /* footer height */
+    padding-bottom: 300px;
   }
 
   #site-center {
@@ -487,7 +487,7 @@ code {
   }
 
   #site-footer-container {
-    height: 400px;
+    height: 300px;
   }
 
   #site-footer {
@@ -499,17 +499,24 @@ code {
     left: 0;
     right: 0;
     width: auto;
-    height: 150px;
+    height: 130px;
     padding: 0 4vw;
     border: 2px solid #444;
   }
 
   .site-footer-box:nth-child(1) {
-    top: 20px;
+    top: 10px;
+    border-bottom: 0;
   }
 
   .site-footer-box:nth-child(2) {
-    top: 190px;
+    top: 140px;
+    border-top: 0;
+  }
+
+  #search {
+    max-width: 400px;
+    width: 100%;
   }
 }
 
