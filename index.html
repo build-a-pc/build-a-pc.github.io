@@ -30,16 +30,21 @@ PORPOSE: Contains layout, includes everything, loads content pages via AJAX.
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Slab">
 	<style>	
-	.dropdown {
+
+	.dropdownContent {
 		display: none;
 		position: absolute;
 		
 	}
 
-	.dropdown a {
+	.dropdownContent a {
+		display: block;
+		color: black;
 		display: block;
 	}
-		
+	.show {
+		display:block;
+	}
 	</style>
 
     <!-- Favicon and stuff -->
@@ -136,8 +141,7 @@ PORPOSE: Contains layout, includes everything, loads content pages via AJAX.
           <div class="site-footer-box">
             <p><b>Search</b></p>
             <input id="search" type="text" name="search" placeholder="Search ..." oninput="start()" onblur="stop()" onfocus="start()" />
-			<div id="dropdown" class="dropdown">
-				<a href="#tets">Test</a>
+			<div id="dropdown" class="dropdownContent">
 			</div>
           </div>
 

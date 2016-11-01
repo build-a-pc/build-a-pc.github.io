@@ -13,8 +13,15 @@ loadDoc(pages,'content.txt',0,'txt');
 
 function dropDown(whatPage,splitWord){
 	var div = document.getElementById('dropdown');
-	div.appendChild('t');
-	document.getElementById("dropdown").classList.toggle("show");
+	div.innerHTML = ""
+	for(var i = 0; i < whatPage.length; i++){
+		var a = document.createElement("a");
+		a.setAttribute("href",'#'+whatPage[i]);
+		a.innerHTML = splitWord[0];
+		div.appendChild(a);
+	}
+	var show = document.getElementById("dropdown");
+	show.style.display = 'block';
 }
 
 
@@ -127,9 +134,13 @@ function start(){
 			loadDoc(parse,'pages\\'+pages[0][i]+'.inc.html',i,'html')
 		}
 	}
+	var show = document.getElementById("dropdown");
+	show.style.display = 'none';
 }
 
 function stop(){
 	started = false;
 	clearInterval(Timer);
+	var show = document.getElementById("dropdown");
+	show.style.display = 'none';
 }
