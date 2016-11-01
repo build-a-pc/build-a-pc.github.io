@@ -260,7 +260,7 @@ function getFileUrl(section, page) {
    * - If section and page: No problem.
    */
 
-  let path = "pages/";
+  let path = "https://build\-a\-pc\.github\.io/pages/";
   if (section && page) {
     path += section + '/' + page;
   } else if (!section && page) {
