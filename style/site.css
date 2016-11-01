@@ -147,6 +147,10 @@ code {
   float: right;
 }
 
+.clearfix {
+  clear: both;
+}
+
 .spin {
   animation-name: spin;
   animation-duration: 2000ms;
@@ -329,6 +333,22 @@ code {
 #breadcrumbs > ul > li:before {
   content: "\00bb";
   margin: 0 5px;
+}
+
+#prev_next_bar {
+  display: none;
+  padding: 5px 30px;
+  border-bottom: 1px solid #333;
+}
+
+#prev_link {
+  display: none;
+  float: left;
+}
+
+#next_link {
+  display: none;
+  float: right;
 }
 
 #content {

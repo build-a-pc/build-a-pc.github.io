@@ -56,7 +56,7 @@ function onMobileMenuClick(ev) {
 function showList(list) {
   let oldShownList = shownList;
   if (shownList) {
-    shownList.style.display = "none";
+    shownList.style.display = null;
     shownList = null;
   }
   if (list && list !== oldShownList) {
@@ -79,9 +79,9 @@ function updateMobileMenu() {
   let width = document.documentElement.clientWidth;
   if (!isMobileMenuShown || (isMobileMenuShown && width > MOBILE_MENU_MAX_WIDTH)) {
     showList(null);
-    navbarShow.style.display = "";
-    navbarHide.style.display = "";
-    navbarTopList.style.display = "";
+    navbarShow.style.display = null;
+    navbarHide.style.display = null;
+    navbarTopList.style.display = null;
     isMobileMenuShown = false;
   } else {
     navbarShow.style.display = "none";

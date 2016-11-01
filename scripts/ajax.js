@@ -24,6 +24,10 @@ const META_PAGE = "page";
 const META_SECTION = "section";
 const META_PAGE_NAME = "page_name";
 const META_SECTION_NAME = "section_name";
+const META_PREV_PAGE_URI = "prev_page_uri";
+const META_PREV_PAGE_NAME = "prev_page_name";
+const META_NEXT_PAGE_URI = "next_page_uri";
+const META_NEXT_PAGE_NAME = "next_page_name";
 const META_SHOW_BREADCRUMBS = "show_breadcrumbs";
 const META_SHOW_PAGE_BREADCRUMB = "show_page_breadcrumb";
 
@@ -150,6 +154,7 @@ function loadNewContent(response) {
 
   let info = getMetaInfo(dom);
   updateTitle(info[META_TITLE]);
+  updatePrevNextBar(info[META_PREV_PAGE_URI], info[META_PREV_PAGE_NAME], info[META_NEXT_PAGE_URI], info[META_NEXT_PAGE_NAME]);
 
   window.dispatchEvent(new CustomEvent(EVENT_ON_LOADED, {"detail": info}));
 }
@@ -161,6 +166,32 @@ function updateTitle(title) {
     element.innerHTML = TITLE + " - " + title
   } else {
     element.innerHTML = TITLE;
+  }
+}
+
+// Updates the prev/next bar.
+function updatePrevNextBar(prevUri, prevName, nextUri, nextName) {
+  let prevNextBar = document.getElementById("prev_next_bar");
+  let prevLink = document.getElementById("prev_link");
+  let nextLink = document.getElementById("next_link");
+  if (prevUri || nextUri) {
+    prevNextBar.style.display = "block";
+  } else {
+    prevNextBar.style.display = null;
+  }
+  if (prevUri && prevName) {
+    prevLink.style.display = "block";
+    prevLink.setAttribute("href", prevUri);
+    prevLink.getElementsByTagName("SPAN")[0].innerHTML = prevName;
+  } else {
+    prevLink.style.display = null;
+  }
+  if (nextUri && nextName) {
+    nextLink.style.display = "block";
+    nextLink.setAttribute("href", nextUri);
+    nextLink.getElementsByTagName("SPAN")[0].innerHTML = nextName;
+  } else {
+    nextLink.style.display = null;
   }
 }
 
@@ -179,6 +210,10 @@ function getMetaInfo(dom) {
       case META_SECTION:
       case META_PAGE_NAME:
       case META_SECTION_NAME:
+      case META_PREV_PAGE_URI:
+      case META_PREV_PAGE_NAME:
+      case META_NEXT_PAGE_URI:
+      case META_NEXT_PAGE_NAME:
       case META_SHOW_BREADCRUMBS:
       case META_SHOW_PAGE_BREADCRUMB:
         info[metaName] = metaContent;
@@ -261,7 +296,7 @@ window.addEventListener(EVENT_ON_LOAD, function(ev) {
 
 // TMP onloaded example
 window.addEventListener(EVENT_ON_LOADED, function(ev) {
-  /*
+/*
   console.log("EVENT_ON_LOADED");
   let options = ev.detail;
   console.log("title=" + options.title);
@@ -271,7 +306,11 @@ window.addEventListener(EVENT_ON_LOADED, function(ev) {
   console.log("section=" + options.section);
   console.log("page_name=" + options.page_name);
   console.log("section_name=" + options.section_name);
+  console.log("prev_page_uri=" + options.prev_page_uri);
+  console.log("prev_page_name=" + options.prev_page_name);
+  console.log("next_page_uri=" + options.next_page_uri);
+  console.log("next_page_name=" + options.next_page_name);
   console.log("show_breadcrumbs=" + options.show_breadcrumbs);
   console.log("show_page_breadcrumb=" + options.show_page_breadcrumb);
-  */
+*/
 });
