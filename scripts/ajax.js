@@ -48,7 +48,7 @@ window.addEventListener("popstate", function() { gotoContentPage(window.location
 // Catches mouse clicks AJAX can handle.
 window.addEventListener("click", function(ev) {
   let target = ev.target;
-  if (!ev.defaultPrevented && target.nodeName === "A") {
+  if (!ev.defaultPrevented && ev.button === 0 && target.nodeName === "A") {
     if (target.origin === window.location.origin &&
         target.pathname === window.location.pathname) {
       ev.preventDefault();
