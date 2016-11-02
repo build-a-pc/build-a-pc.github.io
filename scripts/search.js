@@ -144,7 +144,7 @@ function stop(){
 	started = false;
 	clearInterval(Timer);
 	show = document.getElementById("dropdown");
-	Timer2 = setInterval(checkTextBox, 1000);
+	Timer2 = setInterval(hideDropDown, 500);
 }
 
 function hideDropDown(){
