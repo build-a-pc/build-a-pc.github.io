@@ -200,12 +200,7 @@ code {
   margin: 0;
   top: 15px;
   left: 150px;
-  font: 50px 'Roboto Slab', serif;
-}
-
-#site-header-title, #site-header-title > a, #site-header-title > a:hover {
-  color: #fff;
-  text-decoration: none;
+  font: 3em 'Roboto Slab', serif;
 }
 
 #site-header-sub-title {
@@ -214,7 +209,13 @@ code {
   margin: 0;
   top: 35px;
   left: 625px;
-  font: 1em 'Roboto Slab', serif;
+  font: 1.2em 'Roboto Slab', serif;
+}
+
+#site-header-title, #site-header-title > a, #site-header-title > a:hover,
+#site-header-sub-title, #site-header-sub-title > a, #site-header-sub-title > a:hover {
+  color: #fff;
+  text-decoration: none;
 }
 
 #site-center-container {
@@ -231,7 +232,7 @@ code {
   background-color: #fff;
   border: 2px solid #333;
   box-shadow: -5px 0 5px #333, 5px 0 5px #333;
-  margin: 5px auto 5px;
+  margin: 5px auto;
 }
 
 #navbar {
@@ -436,14 +437,14 @@ code {
   #site-header-title {
     position: relative;
     display: block;
-    top: -10px;
+    top: 0;
     left: 0;
   }
 
   #site-header-sub-title {
     position: relative;
     display: block;
-    margin-top: -20px;
+    margin-top: -10px;
     top: 0;
     left: 0;
   }
@@ -522,12 +523,26 @@ code {
 
 @media screen and (max-width: 449px) {
   #site-header-title {
-    top: 0;
-    left: 20px;
+    margin-top: 5px;
     font-size: 2em;
   }
 
   #site-header-sub-title {
-    margin-top: -5px;
+    margin-top: 0;
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 299px) {
+
+  #site-header-logo {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 149px) {
+
+  body {
+    display: none;
   }
 }
