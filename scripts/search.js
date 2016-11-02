@@ -1,6 +1,7 @@
 // Search //
 
 var Timer;
+var Timer2;
 var same = "";
 var count = 0;
 var started = false;
@@ -9,6 +10,7 @@ var soke = "";
 var pages = [];
 var numberOfPages = 0;
 var rankedHits = [];
+var show;
 loadDoc(pages,'content.txt',0,'txt');
 
 function dropDown(whatPage,splitWord){
@@ -141,6 +143,11 @@ function start(){
 function stop(){
 	started = false;
 	clearInterval(Timer);
-	var show = document.getElementById("dropdown");
+	show = document.getElementById("dropdown");
+	Timer2 = setInterval(checkTextBox, 1000);
+}
+
+function hideDropDown(){
 	show.style.display = 'none';
+	clearInterval(Timer2);
 }
