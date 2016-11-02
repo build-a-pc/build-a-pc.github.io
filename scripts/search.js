@@ -123,8 +123,8 @@ function checkTextBox(){
 			}**/
 			
 		}
-	}
-};
+}
+
 
 function start(){
 	if(!started){
