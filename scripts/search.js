@@ -17,10 +17,26 @@ function dropDown(whatPage,splitWord){
 	var div = document.getElementById('dropdown');
 	div.innerHTML = "";
 	for(var i = 0; i < whatPage.length; i++){
-		var a = document.createElement("a");
-		a.setAttribute("href",'?'+whatPage[i]);
-		a.innerHTML = splitWord[0];
-		div.appendChild(a);
+		var pageLink = whatPage[i].split('\\');
+		if(whatPage[i] == 'home'){
+			var a = document.createElement("a");
+			a.setAttribute("href",'.');
+			a.innerHTML = splitWord[0];
+			div.appendChild(a);
+		}
+		if((pageLink.length > 2) && whatPage[i] != 'home'){
+			var a = document.createElement("a");
+			a.setAttribute("href",'?section='+pageLink[0]+'&page='+pageLink[2]);
+			a.innerHTML = splitWord[0];
+			div.appendChild(a);
+		}
+		if((pageLink.length == 1) && whatPage[i] != 'home'){
+			var a = document.createElement("a");
+			a.setAttribute("href",'?section='+whatPage[i]);
+			a.innerHTML = splitWord[0];
+			div.appendChild(a);
+		}
+		/**splitWord.split('//'); then  do something**/
 	}
 	var show = document.getElementById("dropdown");
 	show.style.display = 'block';
