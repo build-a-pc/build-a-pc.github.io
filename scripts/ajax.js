@@ -17,6 +17,7 @@ const EVENT_ON_LOAD = "baponcontentload";
 const EVENT_ON_LOADED = "baponcontentloaded";
 const ID_CONTENT = "content";
 const TITLE = "Build-a-PC"
+const CENTER_EXTRA_YSPACE = 14;
 const META_TITLE = "title";
 const META_DESCRIPTION = "description";
 const META_AUTHOR = "author";
@@ -66,7 +67,7 @@ function updateContentContainerHeight() {
   let header = document.getElementById("site-header-container");
   let center = document.getElementById("site-center");
   let footer = document.getElementById("site-footer-container");
-  center.style.minHeight = String(window.innerHeight - header.clientHeight - footer.clientHeight) + "px";
+  center.style.minHeight = String(window.innerHeight - header.clientHeight - footer.clientHeight - CENTER_EXTRA_YSPACE) + "px";
 }
 
 // Loads content page on given URL.
