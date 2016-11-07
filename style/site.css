@@ -239,6 +239,7 @@ code {
   display: inline-block;
   position: relative;
   width: 100%;
+  margin-bottom: -5px;
   text-align: center;
   background-color: #444;
 }
@@ -312,7 +313,7 @@ code {
 }
 
 #breadcrumbs {
-  padding: 5px 30px;
+  padding: 3px 30px;
   border-bottom: 1px solid #333;
 }
 
@@ -338,7 +339,7 @@ code {
 
 #prev_next_bar {
   display: none;
-  padding: 5px 30px;
+  padding: 3px 30px;
   border-bottom: 1px solid #333;
 }
 
