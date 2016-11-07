@@ -409,8 +409,21 @@ code {
   margin: 5px;
 }
 
-#search {
+.search #search {
   width: 100%;
+}
+
+.search .dropdownContent {
+  display: none;
+  position: absolute;
+}
+
+.search .dropdownContent a {
+  display: block;
+  color: black;
+}
+.search .show {
+  display: block;
 }
 
 /* Media styles */
