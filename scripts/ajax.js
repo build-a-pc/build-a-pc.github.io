@@ -1,6 +1,6 @@
 /*
 FILE NAME: ajax.js
-WRITTEN BY: H&aring;vard
+WRITTEN BY: Håvard
 WHEN: 2016 autumn
 PURPOSE: Takes care of loading content pages and other core functionality.
 */

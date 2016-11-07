@@ -1,6 +1,6 @@
 /*
 FILE NAME: navbar.js
-WRITTEN BY: H&aring;vard
+WRITTEN BY: Håvard
 WHEN: 2016 autumn
 PURPOSE: Makes the navbar active and responsive.
 */
