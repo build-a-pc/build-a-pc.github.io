@@ -36,7 +36,7 @@ function dropDown(whatPage,splitWord){
 			a.innerHTML = splitWord[0];
 			div.appendChild(a);
 		}
-		if((pageLink.length == 1) && whatPage[i] != 'sitemap'){
+		if((pageLink.length == 1) && whatPage[i] != 'home' && whatPage[i] != 'sitemap'){
 			var a = document.createElement("a");
 			a.setAttribute("href",'?section='+whatPage[i]);
 			a.innerHTML = splitWord[0];
