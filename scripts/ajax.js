@@ -32,7 +32,8 @@ const META_NEXT_PAGE_NAME = "next_page_name";
 const META_SHOW_BREADCRUMBS = "show_breadcrumbs";
 const META_SHOW_PAGE_BREADCRUMB = "show_page_breadcrumb";
 
-let currentUrlQuery = "";
+let pageUriRoot = "";
+let currentUriQuery = "";
 
 // Called when browser is resized.
 window.addEventListener("resize", function() { updateContentContainerHeight(); });
@@ -70,31 +71,31 @@ function updateContentContainerHeight() {
   center.style.minHeight = String(window.innerHeight - header.clientHeight - footer.clientHeight - CENTER_EXTRA_YSPACE) + "px";
 }
 
-// Loads content page on given URL.
-function gotoContentPage(url, force=false) {
-  let args = getArguments(url);
+// Loads content page on given URI.
+function gotoContentPage(uri, force=false) {
+  let args = getArguments(uri);
   let section = args["section"];
   let page = args["page"];
-  let fileUrl = getFileUrl(section, page);
-  let pageUrlQuery = getPageUrlQuery(section, page);
-  let browserUrlQuery = window.location.search;
+  let fileUri = getFileUri(section, page);
+  let pageUriQuery = getPageUriQuery(section, page);
+  let browserUriQuery = window.location.search;
 
-  if (force || pageUrlQuery !== currentUrlQuery || pageUrlQuery !== browserUrlQuery) {
+  if (force || pageUriQuery !== currentUriQuery || pageUriQuery !== browserUriQuery) {
     if (window.dispatchEvent(new Event(EVENT_ON_LOAD, {cancelable: true}))) {
-      if (pageUrlQuery !== browserUrlQuery) {
-        changeBrowserUrl(window.location.pathname + pageUrlQuery);
+      if (pageUriQuery !== browserUriQuery) {
+        changeBrowserUri(window.location.pathname + pageUriQuery);
       }
       unloadOldContent();
-      loadContentFile(fileUrl);
-      currentUrlQuery = pageUrlQuery;
+      loadContentFile(fileUri);
+      currentUriQuery = pageUriQuery;
     } else {
-      console.log("[AJAX] Prevented: " + fileUrl);
+      console.log("[AJAX] Prevented: " + fileUri);
     }
   }
 }
 
 // Handles the actual content page file loading.
-function loadContentFile(fileUrl) {
+function loadContentFile(fileUri) {
   /*
    * Rules:
    * - If file not found: Go to ERROR_404_PATH.
@@ -109,23 +110,23 @@ function loadContentFile(fileUrl) {
       switch (request.status) {
         case 200:
           loadNewContent(request.responseText);
-          console.log("[AJAX] Loaded: " + fileUrl);
+          console.log("[AJAX] Loaded: " + fileUri);
           break;
         case 404:
-          if (fileUrl !== ERROR_404_PATH) {
-            console.log("[AJAX] Error: 404 File not found: " + fileUrl);
+          if (fileUri !== ERROR_404_PATH) {
+            console.log("[AJAX] Error: 404 File not found: " + fileUri);
             loadContentFile(ERROR_404_PATH);
           } else {
-            console.log("[AJAX] Error: Could not find error 404 file: " + fileUrl);
+            console.log("[AJAX] Error: Could not find error 404 file: " + fileUri);
           }
           break;
         default:
-          console.log("[AJAX] Error: Unknown: " + request.status + ' ' + fileUrl);
+          console.log("[AJAX] Error: Unknown: " + request.status + ' ' + fileUri);
           break;
       }
     }
   };
-  request.open("GET", fileUrl, true);
+  request.open("GET", fileUri, true);
   request.send();
 }
 
@@ -226,13 +227,13 @@ function getMetaInfo(dom) {
   return info;
 }
 
-// Changes browser URL using HTML5 History API.
-function changeBrowserUrl(newUrl) {
-  window.history.pushState(null, "title", newUrl);
+// Changes browser URI using HTML5 History API.
+function changeBrowserUri(newUri) {
+  window.history.pushState(null, "title", newUri);
 }
 
-// Gets logical poge URL query for index.html.
-function getPageUrlQuery(section, page) {
+// Gets logical poge URI query for index.html.
+function getPageUriQuery(section, page) {
   /*
    * Rules:
    * - Home has no section or name in query.
@@ -252,7 +253,7 @@ function getPageUrlQuery(section, page) {
 }
 
 // Gets relative file path for page.
-function getFileUrl(section, page) {
+function getFileUri(section, page) {
   /*
    * Rules:
    * - If no section and no page: Go to home.
@@ -261,7 +262,7 @@ function getFileUrl(section, page) {
    * - If section and page: No problem.
    */
 
-  let path = "https://build\-a\-pc\.github\.io/pages/";
+  let path = pageUriRoot + "pages/";
   if (section && page) {
     path += section + '/' + page;
   } else if (!section && page) {
@@ -275,11 +276,11 @@ function getFileUrl(section, page) {
   return path;
 }
 
-// Gets arguments from given URL.
-function getArguments(url) {
+// Gets arguments from given URI.
+function getArguments(uri) {
   argumentsInQueryRegex = /(?:[\?\&]([a-zA-Z0-9_]+(?:=[a-zA-Z0-9_]*)?))/g;
   let element = document.createElement("a");
-  element.href = url;
+  element.href = uri;
   let query = element.search;
   let args = [];
   while (match = argumentsInQueryRegex.exec(query)) {
