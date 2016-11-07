@@ -12,7 +12,7 @@ PURPOSE: Takes care of loading content pages and other core functionality.
  */
 
 const PAGE_FILE_ENDING = ".inc.html";
-const ERROR_404_PATH = "/pages/error/404.inc.html";
+const ERROR_404_PATH = "pages/error/404.inc.html";
 const EVENT_ON_LOAD = "baponcontentload";
 const EVENT_ON_LOADED = "baponcontentloaded";
 const ID_CONTENT = "content";
@@ -65,10 +65,11 @@ window.addEventListener("click", function(ev) {
 
 // Updates content container height.
 function updateContentContainerHeight() {
+  console.log(1);
   let header = document.getElementById("site-header-container");
   let center = document.getElementById("site-center");
   let footer = document.getElementById("site-footer-container");
-  center.style.minHeight = String(window.innerHeight - header.clientHeight - footer.clientHeight - CENTER_EXTRA_YSPACE) + "px";
+  center.style.minHeight = String(Math.max(window.innerHeight - header.clientHeight - footer.clientHeight - CENTER_EXTRA_YSPACE, 0)) + "px";
 }
 
 // Loads content page on given URI.

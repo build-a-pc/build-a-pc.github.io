@@ -14,7 +14,7 @@ var show;
 loadDoc(pages,'content.txt',0,'txt');
 
 function dropDown(whatPage,splitWord){
-	var div = document.getElementById('dropdown');
+	var div = document.querySelector('.search #dropdown');
 	div.innerHTML = "";
 	for(var i = 0; i < whatPage.length; i++){
 		var pageLink = whatPage[i].split('\\');
@@ -24,13 +24,19 @@ function dropDown(whatPage,splitWord){
 			a.innerHTML = splitWord[0];
 			div.appendChild(a);
 		}
-		if((pageLink.length > 2) && whatPage[i] != 'home'){
+    if(whatPage[i] == 'sitemap'){
+			var a = document.createElement("a");
+			a.setAttribute("href",'?page=sitemap');
+			a.innerHTML = splitWord[0];
+			div.appendChild(a);
+		}
+		if((pageLink.length > 2)){
 			var a = document.createElement("a");
 			a.setAttribute("href",'?section='+pageLink[0]+'&page='+pageLink[2]);
 			a.innerHTML = splitWord[0];
 			div.appendChild(a);
 		}
-		if((pageLink.length == 1) && whatPage[i] != 'home'){
+		if((pageLink.length == 1) && whatPage[i] != 'sitemap'){
 			var a = document.createElement("a");
 			a.setAttribute("href",'?section='+whatPage[i]);
 			a.innerHTML = splitWord[0];
@@ -38,7 +44,7 @@ function dropDown(whatPage,splitWord){
 		}
 		/**splitWord.split('//'); then  do something**/
 	}
-	var show = document.getElementById("dropdown");
+	var show = document.querySelector(".search #dropdown");
 	show.style.display = 'block';
 }
 
@@ -116,7 +122,7 @@ function loadDoc(listSave,page,numberOfPage) {
 
 function checkTextBox(){
 	var page = 1;
-	var searchString = document.getElementById('search');
+	var searchString = document.getElementById('search-bar');
 	if(searchString.value !== ''){
 		if(same == searchString.value){
 			count = count+1;
@@ -139,7 +145,7 @@ function checkTextBox(){
 					break loop3;
 				}
 			}**/
-			
+
 		}
 }
 
@@ -152,14 +158,14 @@ function start(){
 			loadDoc(parse,'pages\\'+pages[0][i]+'.inc.html',i,'html')
 		}
 	}
-	var show = document.getElementById("dropdown");
+	var show = document.querySelector(".search #dropdown");
 	show.style.display = 'none';
 }
 
 function stop(){
 	started = false;
 	clearInterval(Timer);
-	show = document.getElementById("dropdown");
+	show = document.querySelector(".search #dropdown");
 	Timer2 = setInterval(hideDropDown, 500);
 }
 

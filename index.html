@@ -28,23 +28,6 @@ PORPOSE: Main webpage, loads content pages through AJAX.
     <link rel="stylesheet" href="style/site.css" />
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%7CRoboto+Mono%7CRoboto+Slab">
-	<style>
-
-	.dropdownContent {
-		display: none;
-		position: absolute;
-
-	}
-
-	.dropdownContent a {
-		display: block;
-		color: black;
-		display: block;
-	}
-	.show {
-		display:block;
-	}
-	</style>
 
     <!-- Favicon and stuff -->
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png?v=Om5QWMBdJg">
@@ -141,10 +124,10 @@ PORPOSE: Main webpage, loads content pages through AJAX.
       <div id="site-footer-container">
         <div id="site-footer">
           <div class="site-footer-box">
-            <p><b>Search</b></p>
+            <br />
             <div class="search">
-              <input id="search" type="text" name="search" placeholder="Search ..." oninput="start()" onblur="stop()" onfocus="start()" />
-  			      <div id="dropdown" class="dropdownContent"></div>
+              <input id="search-bar" type="text" name="search" placeholder="Search ..." oninput="start()" onblur="stop()" onfocus="start()" />
+              <div id="dropdown" class="dropdownContent"></div>
             </div>
           </div>
 
