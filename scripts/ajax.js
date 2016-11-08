@@ -18,6 +18,7 @@ const EVENT_ON_LOADED = "baponcontentloaded";
 const ID_CONTENT = "content";
 const TITLE = "Build-a-PC"
 const CENTER_EXTRA_YSPACE = 14;
+const FILE_PROTOCOL_PAGE_ROOT = "https://build-a-pc.github.io/"
 const META_TITLE = "title";
 const META_DESCRIPTION = "description";
 const META_AUTHOR = "author";
@@ -76,6 +77,11 @@ function updateContentContainerHeight() {
 
 // Loads content page on given URI.
 function gotoContentPage(uri, force=false) {
+  // Since XHR won't load files, load from main site
+  if (window.location.protocol === "file:") {
+    pageUriRoot = FILE_PROTOCOL_PAGE_ROOT
+  }
+
   let args = getArguments(uri);
   let section = args["section"];
   let page = args["page"];
