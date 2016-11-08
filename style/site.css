@@ -314,6 +314,7 @@ code {
 }
 
 #breadcrumbs {
+  display: none;
   padding: 3px 30px;
   border-bottom: 1px solid #333;
   background-color: #666;
