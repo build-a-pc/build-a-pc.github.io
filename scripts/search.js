@@ -14,37 +14,65 @@ function dropDown(whatPage,splitWord){
   let div = document.querySelector(".search #dropdown");
   div.innerHTML = "";
   for(let i = 0; i < whatPage.length; i++){
-    let pageLink = whatPage[i].split("\\");
+    let pageLink = whatPage[i].split("\\\\");
     if(whatPage[i] == "home"){
       let a = document.createElement("a");
       a.setAttribute("href",".");
-      a.innerHTML = splitWord[0];
+      a.innerHTML = "Section: Home";
       div.appendChild(a);
     }
     if(whatPage[i] == "sitemap"){
       let a = document.createElement("a");
       a.setAttribute("href","?page=sitemap");
-      a.innerHTML = splitWord[0];
+      a.innerHTML = "Section: Sitemap";
       div.appendChild(a);
     }
-    if((pageLink.length > 2)){
+    if((pageLink.length > 1)){
       let a = document.createElement("a");
-      a.setAttribute("href","?section="+pageLink[0]+"&page="+pageLink[2]);
-      a.innerHTML = splitWord[0];
+      a.setAttribute("href","?section="+pageLink[0]+"&page="+pageLink[1]);
+      a.innerHTML = ("Section: " + containPageNameMoreThan1Word(pageLink[0]) + ", Page: " + containPageNameMoreThan1Word(pageLink[1]));
       div.appendChild(a);
     }
     if((pageLink.length == 1) && whatPage[i] != "home" && whatPage[i] != "sitemap"){
       let a = document.createElement("a");
       a.setAttribute("href","?section="+whatPage[i]);
-      a.innerHTML = splitWord[0];
+      a.innerHTML = ("Section: " + containPageNameMoreThan1Word(pageLink[0]));
       div.appendChild(a);
     }
-    /**splitWord.split("//"); then  do something**/
+    if((pageLink.length == 0)){
+      let a = document.createElement("a");
+      a.innerHTML = ("No hits, try remove words or search on something else");
+      div.appendChild(a);
+    }	
   }
   let show = document.querySelector(".search #dropdown");
   show.style.display = "block";
 }
 
+function containPageNameMoreThan1Word(pageLink){
+  let splitPageLink = pageLink.split("_");
+  for(let i = 0; i < splitPageLink.length; i++){
+	if(splitPageLink[i].length < 4){
+	  splitPageLink[i] = splitPageLink[i] = splitPageLink[i].toUpperCase();;
+	}
+	if(splitPageLink[i].length >= 4){
+	  splitPageLink[i] = splitPageLink[i].charAt(0).toUpperCase() + splitPageLink[i].slice(1);		
+	}
+  }
+  if(splitPageLink.length == 3){
+	return (splitPageLink[0] + " og " + splitPageLink[1] + " og " + splitPageLink[2]);
+  }
+  if(splitPageLink.length == 2){
+	return (splitPageLink[0] + " og " + splitPageLink[1]);
+  }
+  if(splitPageLink.length == 1){
+	return splitPageLink[0];
+  }
+  if(splitPageLink.length > 5){
+	return "Something is wrong, no page shall exist of more than 3 nameparts";
+  }
+	
+}
 
 function close1Index(splitWord){
   let hits = [];
@@ -134,14 +162,6 @@ function checkTextBox(){
     soke = searchString;
     let cleanSearchString = searchString.value.replace(/[A-Z]/gi, function myFunction(x){return x.toLowerCase();});
     moreWords(cleanSearchString);
-    /**for(i = 0; i < parse.length; i++){
-      loop3:for(let j = 0; j < parse[i].length; j++){
-        if(cleanSearchString==parse[i][j]){
-          console.log("We have a match at page: " + pages[0][i] +" " + parse[i][j]);
-          break loop3;
-        }
-      }**/
-
     }
 }
 
