@@ -125,7 +125,7 @@ function loadDoc(listSave,page,numberOfPage,run) {
     if(run >= 1){
 		fileString = exractBody(this.responseText);
 	}
-    let cleanString = fileString.replace(/[\?\|!"#¤%&\/\(\)=\+\-'¨\^}{\[\]\$£@:;*`~€<>§]| (?= )/g, " ");
+    let cleanString = fileString.replace(/[\?\|!"#¤%&\/\(\)=\+\-'¨\^}{\[\]\$£@:;*`~€<>§,]| (?= )/g, " ");
     let cleanerString = cleanString.replace(/[A-Z]/gi, function myFunction(x){return x.toLowerCase();});
     let word = [];
     let lines = cleanerString.split("\n");
