@@ -53,6 +53,7 @@ h1 > a:hover, h2 > a:hover, h3 > a:hover, h4 > a:hover, h5 > a:hover, h6 > a:hov
   color: #222;
   text-decoration: none;
   margin: 1em 0 .8em;
+  clear: both;
 }
 
 h1 {
@@ -73,8 +74,13 @@ hr {
   border: 0;
   background-color: #aaa;
   height: 2px;
-  margin: 30px 0 30px;
+  margin: 30px;
   clear: both;
+}
+
+section hr {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 img {
@@ -85,6 +91,7 @@ header {}
 
 section {
   clear: both;
+  margin: 0 30px;
 }
 
 footer {
@@ -92,10 +99,14 @@ footer {
 }
 
 figure {
-  display: inline-block;
-  background-color: #ddd;
+  max-width: calc(100% - 20px);
   border: 1px solid #aaa;
   margin: 10px;
+  background-color: #ddd;
+}
+
+figure img {
+  width: 100%;
 }
 
 figcaption {
@@ -138,13 +149,36 @@ code {
   margin: 0;
 }
 
+.width-25 {
+  width: 25%;
+}
+
+.width-40 {
+  width: 40%;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.width-75 {
+  width: 75%;
+}
+
+.width-100 {
+  width: 100%;
+}
+
 .float-left {
   float: left;
-  clear: both;
+  clear: left;
+  margin-left: 0;
 }
 
 .float-right {
   float: right;
+  clear: right;
+  margin-right: 0;
 }
 
 .clearfix {
@@ -370,7 +404,7 @@ code {
 }
 
 #content {
-  padding: 0 30px 20px;
+  padding-bottom: 20px;
 }
 
 #site-footer-container {
