@@ -26,16 +26,39 @@
       <form id="assembly-quiz" class="quiz">
         <ol>
           <li>
-            <p>Part parts partpart?</p>
-            <label><input type="radio" name="one" value="part" /> Part</label>
-            <label><input type="radio" name="one" value="parts" /> Parts</label>
-            <label><input type="radio" name="one" value="partpart" /> Partpart</label>
+            <p>Which tool do you normally NOT need when assembling a PC?</p>
+            <label><input type="radio" name="one" value="screwdriver" /> Screwdriver</label>
+            <label><input type="radio" name="one" value="partpart" /> Needle-nose pliers</label>
+            <label><input type="radio" name="one" value="blow_torch" /> Blow torch</label>
+            <input type="hidden" name="one_answer" value="blow_torch" />
           </li>
           <li>
-            <p>GPU?</p>
-            <label><input type="radio" name="two" value="yes" /> Yes!</label>
-            <label><input type="radio" name="two" value="no" /> NO?</label>
-            <label><input type="radio" name="two" value="video_card" /> Video card!</label>
+            <p>How do you figure out where to plug what on your motherboard?</p>
+            <label><input type="radio" name="two" value="try" /> Try every combination</label>
+            <label><input type="radio" name="two" value="read_manual" /> Read the manual</label>
+            <label><input type="radio" name="two" value="men_women" /> Men/women don't manuals!</label>
+            <input type="hidden" name="two_answer" value="read_manual" />
+          </li>
+          <li>
+            <p>Which of these can noramlly draw power straight from your motherboard?</p>
+            <label><input type="radio" name="three" value="ssds" /> SSDs</label>
+            <label><input type="radio" name="three" value="fans" /> Fans</label>
+            <label><input type="radio" name="three" value="psu" /> PSU</label>
+            <input type="hidden" name="three_answer" value="fans" />
+          </li>
+          <li>
+            <p>In which order should you attach your video cards to the motherboard?</p>
+            <label><input type="radio" name="four" value="doesnt_matter" /> Doesn't matter at all</label>
+            <label><input type="radio" name="four" value="top" /> From top to bottom</label>
+            <label><input type="radio" name="four" value="bottom" /> From bottom to top</label>
+            <input type="hidden" name="four_answer" value="bottom" />
+          </li>
+          <li>
+            <p>If you're out of cash and not a bad guy, which operating system would you get?</p>
+            <label><input type="radio" name="five" value="windows" /> Windows</label>
+            <label><input type="radio" name="five" value="linux" /> Linux</label>
+            <label><input type="radio" name="five" value="osx" /> Mac OS X</label>
+            <input type="hidden" name="five_answer" value="linux" />
           </li>
         </ol>
         <input type="submit" value="Lock in answers" />

@@ -482,10 +482,32 @@ code {
 .search .dropdownContent a {
   display: block;
   padding: 0 10px;
-  color: black;
+  color: #000;
 }
 .search .show {
   display: block;
+}
+
+.quiz p {
+  font-weight: bold;
+}
+
+.section_link {
+  display: block;
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #666;
+  color: #eee;
+  font: 1.1em 'Roboto Slab', serif;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.section_link:hover {
+  background-color: #c00;
+  color: #eee;
+  text-decoration: none;
 }
 
 /* Media styles */
