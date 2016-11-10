@@ -105,9 +105,6 @@ function close1Index(splitWord){
       }
     }
   }
-  if((number1/whatPage.length)==splitWord.length){
-    console.log("Hurra");
-  }
   dropDown(whatPage,splitWord);
 }
 
@@ -128,7 +125,7 @@ function loadDoc(listSave,page,numberOfPage,run) {
     if(run >= 1){
 		fileString = exractBody(this.responseText);
 	}
-    let cleanString = fileString.replace(/[\?\|!"#¤%&\/\(\)=\+-\.,'¨\^}{\[\]\$£@:;*`~€<>§]| (?= )/g, " ");
+    let cleanString = fileString.replace(/[\?\|!"#¤%&\/\(\)=\+\-'¨\^}{\[\]\$£@:;*`~€<>§]| (?= )/g, " ");
     let cleanerString = cleanString.replace(/[A-Z]/gi, function myFunction(x){return x.toLowerCase();});
     let word = [];
     let lines = cleanerString.split("\n");
@@ -169,7 +166,6 @@ function checkTextBox(){
   if(count == 2){
     clearInterval(Timer);
     started = false;
-    console.log("3 times");
     same = "";
     count = 0;
     soke = searchString;
