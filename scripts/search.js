@@ -122,15 +122,11 @@ function loadDoc(listSave,page,numberOfPage,run) {
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
     let page1 = [];
-	console.log(run);
 	if(run == 0){
-		console.log('test')
 		fileString = this.responseText;
 	}
     if(run >= 1){
-		console.log('test2')
 		fileString = exractBody(this.responseText);
-		console.log('test');
 	}
     let cleanString = fileString.replace(/[\?\|!"#¤%&\/\(\)=\+-\.,'¨\^}{\[\]\$£@:;*`~€<>§]| (?= )/g, " ");
     let cleanerString = cleanString.replace(/[A-Z]/gi, function myFunction(x){return x.toLowerCase();});
