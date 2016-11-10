@@ -8,7 +8,7 @@ let parse = [];
 let soke = "";
 let pages = [];
 let show;
-loadDoc(pages,"content.txt",0);
+loadDoc(pages,"content.txt",0,0);
 
 function dropDown(whatPage,splitWord){
   let div = document.querySelector(".search #dropdown");
@@ -116,12 +116,22 @@ function moreWords(searchString){
   close1Index(splitWord);
 }
 
-function loadDoc(listSave,page,numberOfPage) {
+function loadDoc(listSave,page,numberOfPage,run) {
+  let fileString;
   let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
     let page1 = [];
-    let fileString = this.responseText;
+	console.log(run);
+	if(run == 0){
+		console.log('test')
+		fileString = this.responseText;
+	}
+    if(run >= 1){
+		console.log('test2')
+		fileString = exractBody(this.responseText);
+		console.log('test');
+	}
     let cleanString = fileString.replace(/[\?\|!"#¤%&\/\(\)=\+-\.,'¨\^}{\[\]\$£@:;*`~€<>§]| (?= )/g, " ");
     let cleanerString = cleanString.replace(/[A-Z]/gi, function myFunction(x){return x.toLowerCase();});
     let word = [];
@@ -143,6 +153,13 @@ function loadDoc(listSave,page,numberOfPage) {
   };
   xhttp.open("GET", "https://build\-a\-pc\.github\.io\\"+page, true);
   xhttp.send();
+}
+
+function exractBody(response) {
+  let dom1 = document.createElement("html");
+  dom1.innerHTML = response;
+  let bodyText = dom1.getElementsByTagName("body")[0].innerHTML;
+  return bodyText;
 }
 
 function checkTextBox(){
@@ -171,7 +188,7 @@ function start(){
     started = true;
     Timer = setInterval(checkTextBox, 1000);
     for(let i = 0; i < pages[0].length;i++){
-      loadDoc(parse,"pages\\"+pages[0][i]+".inc.html",i);
+      loadDoc(parse,"pages\\"+pages[0][i]+".inc.html",i,1);
     }
   }
   let show = document.querySelector(".search #dropdown");
