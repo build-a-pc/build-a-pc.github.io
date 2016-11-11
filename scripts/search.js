@@ -76,33 +76,23 @@ function containPageNameMoreThan1Word(pageLink){
 
 function close1Index(splitWord){
   let hits = [];
+  let number = 0;
   for(let h = 0; h < splitWord.length; h++){
-    hits[h]=[];
-    let number = 0;
     for(let i = 0; i < parse.length; i++){
     loop1:for(let j = 0; j < parse[i].length; j++){
         if(splitWord[h]==parse[i][j]){
-          console.log("hit");
-          hits[h][number] = pages[0][i];
+          hits[number] = pages[0][i];
           number = number + 1;
           break loop1;
         }
-      }
+	  }
     }
   }
-  hits.sort();
-  let number1 = 0;
+  let sorted_hits = hits.slice().sort();
   let whatPage = [];
-  for(let h = 0; h < hits[0].length; h++){
-    whatPage[h] = hits[0][h];
-    number1 = number1 + 1;
-    for(let i = 1; i < hits.length; i++){
-      loop2:for(let j = 0; j < hits[i].length; j++){
-        if(hits[0][h] == hits[i][j]){
-          number1 = number1 + 1;
-          break loop2;
-        }
-      }
+  for (let i = 0; i < hits.length - 1; i++) {
+    if (sorted_hits[i + 1] == sorted_hits[i]) {
+        whatPage.push(sorted_hits[i]);
     }
   }
   dropDown(whatPage,splitWord);
