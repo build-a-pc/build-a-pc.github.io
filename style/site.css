@@ -348,13 +348,13 @@ code {
 }
 
 #breadcrumbs {
-  display: block; // show 1
-  visibility: hidden; // show 2
+  display: block; /* show 1, mmh something is wrong here, visibility hidden, hides the breadcrumps */
+  /* visibility: hidden;  show 2 */
   padding: 3px 30px;
   border-bottom: 1px solid #333;
   background-color: #666;
   color: #ccc;
-  font-size: .0.75em; // scale down font
+  font-size: .0.75em; /* scale down font */
 }
 
 #breadcrumbs a {
@@ -373,7 +373,7 @@ code {
 }
 
 #breadcrumbs > ul > li:before {
-  content: "\00a0\00a0\2192\00a0\00a0"; // better implementation of horizont spacing ??
+  content: "\00a0\00a0\2192\00a0\00a0"; /* better implementation of horizont spacing ?? */
 }
 
 #breadcrumbs > ul > li:nth-child(1):before {
@@ -382,7 +382,7 @@ code {
 }
 
 #breadcrumbs > ul > li:last-child{
-  font-weight: bold; // emphasize active section/page
+  /* font-weight: bold; emphasize active section/page (this look strange Petter those dont agree, a user will understand that the last is the page he is on */
 }
 
 #prev_next_bar {
