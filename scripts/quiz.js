@@ -8,7 +8,7 @@ PURPOSE: Check if a given answer to quiz is correct or not
 
 //Function to check answer in radio buttons
 function validateRadio(){
-	var quiz=document.getElementsByClassName="quiz"
+	var quiz=document.getElementsByClassName("quiz")
 	window.alert(quiz)
 	var quizAnswer=document.forms[0].elements["radioName"]
 	for(var n=0;n<quizAnswer.length;n++){
