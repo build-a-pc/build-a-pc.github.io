@@ -369,11 +369,11 @@ code {
 
 #breadcrumbs > ul > li {
   display: inline-block;
+  padding: 0px 0px 0px 0px;
 }
 
 #breadcrumbs > ul > li:before {
-  content: "\2192"; // changed element seperator
-  margin: 0 5px;
+  content: "\00a0\00a0\2192\00a0\00a0"; // better implementation of horizont spacing ??
 }
 
 #breadcrumbs > ul > li:nth-child(1):before {
