@@ -23,8 +23,8 @@
         <h1><a href="#quiz">Assembling the PC Quiz</a></h1>
       </header>
 
-      <form id="assembly-quiz" class="quiz">
-        <ol>
+      <form>
+        <ol class="ol">
           <li>
             <p>Which tool do you normally NOT need when assembling a PC?</p>
             <label><input type="radio" name="one" value="screwdriver" /> Screwdriver</label>
@@ -61,8 +61,9 @@
             <input type="hidden" name="five_answer" value="linux" />
           </li>
         </ol>
-        <input type="submit" value="Lock in answers" />
+        <button type="button" value="Lock in answers" onclick="validateRadio()">Lock in answers</button>
       </form>
+      <div id="resultatQuiz"></div>
     </section>
   </body>
 </html>
