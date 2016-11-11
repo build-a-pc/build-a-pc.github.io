@@ -26,19 +26,43 @@
       <form id="vendors-quiz" class="quiz">
         <ol>
           <li>
-            <p>Part parts partpart?</p>
-            <label><input type="radio" name="one" value="part" /> Part</label>
-            <label><input type="radio" name="one" value="parts" /> Parts</label>
-            <label><input type="radio" name="one" value="partpart" /> Partpart</label>
+            <p>What company was ranked as the 17th in "Taiwan's 2010 Top 20 Global Brands"?</p>
+            <label><input type="radio" name="one" value="Intel" /> Intel</label>
+            <label><input type="radio" name="one" value="Corsair" /> Corsair</label>
+            <label><input type="radio" name="one" value="Gigabyte" /> Gigabyte</label>
+            <input type="hidden" name="one_answer" value="Gigabyte" />
           </li>
           <li>
-            <p>GPU?</p>
-            <label><input type="radio" name="two" value="yes" /> Yes!</label>
-            <label><input type="radio" name="two" value="no" /> NO?</label>
-            <label><input type="radio" name="two" value="video_card" /> Video card!</label>
+            <p>What company is the so-called inventor of GPUs?</p>
+            <label><input type="radio" name="two" value="Samsung" /> Samsung</label>
+            <label><input type="radio" name="two" value="Acer" /> Acer</label>
+            <label><input type="radio" name="two" value="Nvidia" /> Nvidia</label>
+            <input type="hidden" name="two_answer" value="Nvidia" />
+          </li>
+          <li>
+            <p>... started out in 1938 as an export company</p>
+            <label><input type="radio" name="three" value="Zyxel" /> Zyxel</label>
+            <label><input type="radio" name="three" value="Seagate" /> Seagate</label>
+            <label><input type="radio" name="three" value="Samsung" /> Samsung</label>
+            <input type="hidden" name="three_answer" value="Samsung" />
+          </li>
+          <li>
+            <p>Which of these companies were founded excatly 40 years ago?</p>
+            <label><input type="radio" name="four" value="TPlink" /> TP-Link</label>
+            <label><input type="radio" name="four" value="Acer" /> Acer</label>
+            <label><input type="radio" name="four" value="AMD" /> AMD</label>
+            <input type="hidden" name="four_answer" value="Acer" />
+          </li>
+          <li>
+            <p>What does AMD mean?</p>
+            <label><input type="radio" name="five" value="Advanced Mini Devices" /> Advanced Mini Devices</label>
+            <label><input type="radio" name="five" value="Advanced Micro Devices" /> Advanced Micro Devices</label>
+            <label><input type="radio" name="five" value="America Must Die" /> America Must Die</label>
+            <label><input type="radio" name="five" value="Another Man Down" /> Another Man Down</label>
+            <input type="hidden" name="five_answer" value="Advanced Micro Devices" />
           </li>
         </ol>
-        <input type="submit" value="Lock in answers" />
+         <button type="button" value="Lock in answers" onclick="validateRadio()">Lock in answers</button>
       </form>
     </section>
   </body>
