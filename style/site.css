@@ -348,12 +348,13 @@ code {
 }
 
 #breadcrumbs {
-  display: none;
+  display: block; // show 1
+  visibility: hidden; // show 2
   padding: 3px 30px;
   border-bottom: 1px solid #333;
   background-color: #666;
   color: #ccc;
-  font-size: .9em;
+  font-size: .0.75em; // scale down font
 }
 
 #breadcrumbs a {
@@ -371,13 +372,17 @@ code {
 }
 
 #breadcrumbs > ul > li:before {
-  content: "\00bb";
+  content: "\2192"; // changed element seperator
   margin: 0 5px;
 }
 
 #breadcrumbs > ul > li:nth-child(1):before {
   content: "";
   margin: 0;
+}
+
+#breadcrumbs > ul > li:last-child{
+  font-weight: bold; // emphasize active section/page
 }
 
 #prev_next_bar {
