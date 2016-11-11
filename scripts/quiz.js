@@ -7,22 +7,23 @@ PURPOSE: Check if a given answer to quiz is correct or not
 */
 
 //Function to check answer in radio buttons
-var riktig=0
+var correct=0
 function validateRadio(){
-	var quiz=document.getElementsByClassName("quiz")[0]
-	console.log(quiz);
-	var ol=quiz.getElementsByTagName("OL")[0]
-	console.log(ol);
-	var lists=ol.getElementsByTagName("LI")
-	console.log(lists);
-	console.log(lists)
-	for (var i=0;i<lists.length;i++){
-		var answers=ol.getElementsByTagName("LABEL")
-		for (var n=0;n<answers.length;n++){
-			if (answers.checked==true){
-				riktig++
+	correct=0
+	let list = document.querySelector(".ol")
+	let numbersOfLi = list.getElementsByTagName("li")
+	for (var i=0;i<numbersOfLi.length;i++){
+		let inputs = numbersOfLi[i].getElementsByTagName("input")
+		var k=(inputs.length-1)
+		var hidden = numbersOfLi[i].querySelector("input[type=hidden]")
+		for(var k=0; k<inputs.length; k++){
+			if (inputs[k].checked==true){
+				if (inputs[k].value==hidden.value){
+					correct++;
+				}
 			}
 		}
 	}
-	console.log(riktig)
+	var quizResult = document.getElementById("resultatQuiz")
+	quizResult.innerHTML=("You got "+correct+" / "+numbersOfLi.length+" correct")
 }
