@@ -378,7 +378,7 @@ code {
 
 #breadcrumbs > ul > li:nth-child(1):before {
   content: "";
-  margin: 0;
+  margin: 0px 0px 0px 12px;
 }
 
 #breadcrumbs > ul > li:last-child{
@@ -391,7 +391,7 @@ code {
   border-bottom: 1px solid #333;
   background-color: #666;
   color: #ccc;
-  font-size: .9em;
+  font-size: .75em;
 }
 
 #prev_next_bar a {
