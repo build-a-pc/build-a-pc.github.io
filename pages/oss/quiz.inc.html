@@ -23,25 +23,28 @@
         <h1><a href="#quiz">Operating Systems Quiz</a></h1>
       </header>
 
-      <form id="oss-quiz" class="quiz">
-        <ol>
+      <form>
+        <ol class="ol">
           <li>
             <p>In what year did was Windows 1.0 released?</p>
             <label><input type="radio" name="one" value="1987" /> 1987</label>
             <label><input type="radio" name="one" value="1989" /> 1989</label>
             <label><input type="radio" name="one" value="1985" /> 1985</label>
             <label><input type="radio" name="one" value="1984" /> 1984</label>
+            <input type="hidden" name="one_answer" value="1985" />
           </li>
           <li>
             <p>What company develops, markets and sells Windows?</p>
-            <label><input type="radio" name="two" value="yes" /> Hewlett Packard</label>
-            <label><input type="radio" name="two" value="no" /> Microsoft</label>
-            <label><input type="radio" name="two" value="video_card" /> Lenovo</label>
-            <label><input type="radio" name="two" value="video_card" /> Google</label>
+            <label><input type="radio" name="two" value="Hewlett Packard" /> Hewlett Packard</label>
+            <label><input type="radio" name="two" value="Microsoft" /> Microsoft</label>
+            <label><input type="radio" name="two" value="Lenovo" /> Lenovo</label>
+            <label><input type="radio" name="two" value="Google" /> Google</label>
+            <input type="hidden" name="two_answer" value="Microsoft" />
           </li>
         </ol>
-        <input type="submit" value="Lock in answers" />
+        <button type="button" value="Lock in answers" onclick="validateRadio()">Lock in answers</button>
       </form>
+      <div id="resultatQuiz"></div>
     </section>
   </body>
 </html>
