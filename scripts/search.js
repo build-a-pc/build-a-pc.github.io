@@ -74,7 +74,8 @@ function containPageNameMoreThan1Word(pageLink){
 	
 }
 
-function close1Index(splitWord){
+function close1Index(searchString){
+  let splitWord = searchString.split(" ");
   let hits = [];
   let number = 0;
   for(let h = 0; h < splitWord.length; h++){
@@ -96,11 +97,6 @@ function close1Index(splitWord){
     }
   }
   dropDown(whatPage,splitWord);
-}
-
-function moreWords(searchString){
-  let splitWord = searchString.split(" ");
-  close1Index(splitWord);
 }
 
 function loadDoc(listSave,page,numberOfPage,run) {
@@ -160,7 +156,7 @@ function checkTextBox(){
     count = 0;
     soke = searchString;
     let cleanSearchString = searchString.value.replace(/[A-Z]/gi, function myFunction(x){return x.toLowerCase();});
-    moreWords(cleanSearchString);
+    close1Index(cleanSearchString);
     }
 }
 
