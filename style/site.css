@@ -385,6 +385,10 @@ code {
 
 #prev_next_bar {
   display: none;
+  position: absolute;
+  box-sizing: border-box;
+  bottom: 0px;
+  width: 100%;
   padding: 3px 30px;
   border-top: 1px solid #333;
   background-color: #666;
@@ -641,13 +645,6 @@ code {
 @media screen and (max-width: 299px) {
 
   #site-header-logo {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 149px) {
-
-  body {
     display: none;
   }
 }
