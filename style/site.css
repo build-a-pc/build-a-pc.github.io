@@ -91,7 +91,6 @@ header {}
 
 section {
   clear: both;
-  margin: 0 30px;
 }
 
 footer {
@@ -274,7 +273,6 @@ code {
   position: relative;
   width: 100%;
   margin-bottom: -5px;
-  border-bottom: 1px solid #333;
   text-align: center;
   background-color: #444;
 }
@@ -348,13 +346,13 @@ code {
 }
 
 #breadcrumbs {
-  display: block; /* show 1, mmh something is wrong here, visibility hidden, hides the breadcrumps */
-  /* visibility: hidden;  show 2 */
+  display: block;
+  visibility: hidden;
   padding: 3px 30px;
   border-bottom: 1px solid #333;
   background-color: #666;
   color: #ccc;
-  font-size: .0.75em; /* scale down font */
+  font-size: .8em;
 }
 
 #breadcrumbs a {
@@ -369,29 +367,29 @@ code {
 
 #breadcrumbs > ul > li {
   display: inline-block;
-  padding: 0px 0px 0px 0px;
 }
 
 #breadcrumbs > ul > li:before {
-  content: "\00a0\00a0\2192\00a0\00a0"; /* better implementation of horizont spacing ?? */
+  content: "\00bb";
+  margin: 0 5px;
 }
 
 #breadcrumbs > ul > li:nth-child(1):before {
   content: "";
-  margin: 0px 0px 0px 12px;
+  margin: 0;
 }
 
-#breadcrumbs > ul > li:last-child{
-  /* font-weight: bold; emphasize active section/page (this look strange Petter those dont agree, a user will understand that the last is the page he is on */
+#content {
+  padding: 0 30px 20px 30px;
 }
 
 #prev_next_bar {
   display: none;
   padding: 3px 30px;
-  border-bottom: 1px solid #333;
+  border-top: 1px solid #333;
   background-color: #666;
   color: #ccc;
-  font-size: .75em;
+  font-size: .8em;
 }
 
 #prev_next_bar a {
@@ -406,10 +404,6 @@ code {
 #next_link {
   display: none;
   float: right;
-}
-
-#content {
-  padding-bottom: 20px;
 }
 
 #site-footer-container {
@@ -589,10 +583,6 @@ code {
     float: none;
   }
 
-  #nav li > ul {
-    position: static;
-  }
-
   #site-footer-container {
     height: 300px;
   }
@@ -636,6 +626,15 @@ code {
   #site-header-sub-title {
     margin-top: 0;
     font-size: 1em;
+  }
+
+  hr {
+    margin: 10px;
+  }
+
+  #content, #breadcrumbs, #prev_next_bar {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 

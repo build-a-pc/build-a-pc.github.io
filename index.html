@@ -106,22 +106,19 @@ PORPOSE: Main webpage, loads content pages through AJAX.
 
         <div id="breadcrumbs">
           <ul>
-            <li><a href="#">TMP Home</a></li>
-            <li><a href="#">TMP Section</a></li>
-            <li><a href="#">TMP Page</a></li>
+            <li>...</li>
           </ul>
         </div>
+
+        <main id="content"></main>
+        <!-- This BR makes sure floating elements don't float into center element padding under footer. -->
+        <br class="clearfix" />
 
         <div id="prev_next_bar">
           <a id="prev_link" href="#">&larr; <span>...</span></a>
           <a id="next_link" href="#"><span>...</span> &rarr;</a>
           <div class="clearfix"></div>
         </div>
-
-        <main id="content"></main>
-
-        <!-- This BR makes sure floating elements don't float into center element padding under footer. -->
-        <br class="clearfix" />
       </div>
     </div>
       <div id="site-footer-container">
