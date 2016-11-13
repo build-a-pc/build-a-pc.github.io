@@ -53,6 +53,110 @@
               Thomas will write most of the "Operating Systems" section. H&aring;vard will write the "Assembling the PC" section.
               The deadline for this is early November 13th.</li>
             </ul>
+			<header>
+			<h2 id="logical_struct"><a href="#logical_struct">Logical Navigation Structure Changes</a></h2>
+			</header>
+			<p>Added a Quiz page on the end of every section. That contain the indented quiz.</p>
+			<p>Every section has a page linked with it (vendors don't have this because it does not have any child pages), that have a little description and a navigation structure map on it.</p>
+			<p>The navigation structure is now</p>
+			<ul>
+              <li>Home</li>
+              <li>Parts (section)
+                <ul>
+				  <li>Parts (Page with description)</li>
+                  <li>Motherboard and CPU</li>
+                  <li>RAM and GPU</li>
+                  <li>Storage, network card, sound card</li>
+                  <li>Cooling, PSU, case</li>
+                  <li>Accessories</li>
+				  <li>Quiz</li>
+                </ul>
+              </li>
+              <li>Part vendors (section and single page)</li>
+			  <ul>
+			    <li>Quiz</li>
+			  </ul>
+              <li>Operating Systems (section)
+                <ul>
+				  <li>Operating Systems (Page with description)</li>
+                  <li>Windows</li>
+                  <li>Linux</li>
+                  <li>Macintosh</li>
+				  <li>Quiz</li>
+                </ul>
+              </li>
+              <li>Assembling the PC (section)
+                <ul>
+				  <li>Assembling the PC (Page with description)</li>
+                  <li>Hardware</li>
+                  <li>Software</li>
+				  <li>Quiz</li>
+                </ul>
+              </li>
+            </ul>
+			
+			<header>
+			<h2 id="file_struct"><a href="#file_struct">File Navigation Structure Changes</a></h2>
+			</header>
+			<p>In images/ added a folder for assembly and vendors that contains images for the section</p>
+			<p>In pages/ added folders for every section that contains their subpages</p>
+			<p>On root added a file "content.txt" containing name of every section and page for the search function to use. The search function search every page mentioned in this file</p>
+			<p>File navigation structure is now</p>
+			<ul>
+              <li>documents/: Contains a standalone/independent site (sub-site) for project documents.
+                <ul>
+                  <li>images/: Contains images.</li>
+                  <li>mockups/: Contains mockups of the site.</li>
+                  <li>style/: Contains styles.</li>
+                  <li>index.html: Sub-site index with links to all project documents.</li>
+                  <li>p1_requirements.html: P1 Project Requirements document.</li>
+                  <li>p2_design.html: P2 Project Design document.</li>
+                  <li>p3_changes.html: P3 Changes document.</li>
+				  <li>p4_testing.html: P4 Testing document.</li>
+                  <li>px_template.html: Template for new project documents.</li>
+                </ul>
+              </li>
+              <li>favicon/: Contains favicon and related images and configurations.</li>
+              <li>images/: Contains all images.
+                <ul>
+                  <li>logo/: Contains site logos in different sizes.</li>
+                  <li>parts/: Contains PC part images.</li>
+				  <li>assembly/: Contains assembly images.</li>
+				  <li>vendors/: Contains vendors logo images.</li>
+				  <li>background.gif</li>
+				  <li>loading.png</li>
+                </ul>
+              </li>
+              <li>pages/: Contains all pages other than home (which is in index.html). These files will be loaded into index.html and replace home live via AJAX.</li>
+			    <ul>
+				  <li>assembly/: Contains assembly subpages.</li>
+				  <li>error/: Contains error subpages.</li>
+				  <li>oss/: Contains oss(Operating Systems) subpages.</li>
+				  <li>parts/: Contains parts subpages.</li>
+				  <li>vendors/: Contains vendors subpages.</li>
+				  <li>home.inc.html: The home page.</li>
+				  <li>sitemap.inc.html: The sitemap page.</li>
+				  <li>template.inc.html: A template page.</li>
+				</ul>
+              <li>scripts/: Contains all JavaScript scripts.</li>
+              <li>style/: Contains all styles.
+                <ul>
+                  <li>normalize.css: CSS normalizer/reset.</li>
+                  <li>site.css: Styles for entire site (not sub-site).</li>
+                </ul>
+              </li>
+			  <li>content.txt: Txt file with everypage written in it.</li>
+              <li>index.html: Site index, contains home page and will load other pages via AJAX.</li>
+            </ul>
+			
+			<header>
+              <h1><a href="#page_layout">Page Layout and Appearance Changes</a></h1>
+            </header>
+			<p>Runar made a new logo</p>
+			<p>Search function moved down to footer, where we indeed to have site description in colum 1 of 2 of the footer.</p>
+			<p>Site description is now moved to the central part of the page.</p>
+			<p>No social icons.</p>
+			
           </section>
         </main>
       </div>
