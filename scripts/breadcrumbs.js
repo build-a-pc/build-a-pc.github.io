@@ -5,12 +5,21 @@ WHEN: 2016 autumn
 PURPOSE: Dynamic update of breadcrumb trail
 */
 
-//  run all functions on top while having function declarations on bottom (hoisted)
-window.addEventListener(EVENT_ON_LOADED, 
-  function(ev){ updateBreadCrumbs(ev)} );
+//  Run all functions on top while having function declarations on bottom (hoisting)
+window.addEventListener(
+  EVENT_ON_LOADED, 
+  function(ev){ updateBreadCrumbs(ev); }
+);
 
 
 
+
+
+
+/*******           FUNCTION DECLARATIONS          *******/  
+
+
+// Update breadcrumbs 
 function updateBreadCrumbs(){
 
 	let eventus = arguments[0];
@@ -34,14 +43,13 @@ function updateBreadCrumbs(){
 		query = "?section=" + section;
 		link = link + query;
 		addBreadCrumb(link, sectionname, bread_list);
-		console.log("A");
 	}
-	else if(!section && page){
+	/*else if(!section && page){
 		query = "?page=" + page;
 		link = link + query;
 		//addBreadCrumb(link, pagename, bread_list);
 		console.log("B");
-	}
+	}*/
 	else if(section && page){	
 		query = "?section=" + section;
 		link = link + query;
@@ -49,7 +57,6 @@ function updateBreadCrumbs(){
 		query = query  + "&page=" + page;
 		link = link + query;
 		addBreadCrumb(link, pagename, bread_list);	
-		console.log("C");
 	}	  
 }
 
