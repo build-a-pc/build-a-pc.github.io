@@ -38,7 +38,7 @@ function updateBreadCrumbs(){
 	else if(!section && page){
 		query = "?page=" + page;
 		link = link + query;
-		addBreadCrumb(link, pagename, bread_list);
+		//addBreadCrumb(link, pagename, bread_list);
 	}
 	else if(section && page){	
 		query = "?section=" + section;
