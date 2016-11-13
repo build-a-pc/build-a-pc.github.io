@@ -22,28 +22,22 @@
       <div class="banner">
         <p class="banner-title"><a href="#">P3 Changes</a></p>
         <p class="banner-sub-title">H&aring;vard, Petter, Runar, Thomas</p>
-        <p class="banner-date"><span style="background-color: red;">DATE</span></p>
+        <p class="banner-date"><span>13.11.2016</span></p>
       </div>
 
       <div class="inner-container">
         <main>
-          <section id="fulfillment">
-            <header>
-              <h1><a href="#fulfillment">Fulfillment of Requirements</a></h1>
-            </header>
-
-            <p>How did each member fulfill their requirements; who worked on which files, who produces artwork; indicate how the modularity requirement was handled and who implemented it.</p>
-          </section>
-
           <section id="list-of-changes">
             <header>
               <h1><a href="#list-of-changes">List of changes</a></h1>
             </header>
 
             <ul>
-              <li>[2016.10.28] Changed logo.</li>
+              <li>[2016.10.28] Changed logo. That Runar made</li>
+			  <li>[2016.10.28] Search function moved down to footer, where we indeed to have site description in colum 1 of 2 of the footer.</li>
               <li>[2016.10.31] The highlighting feature was dropped, because its use was limited and it required very little JavaScript coding.
               Runar, which was assigned to this task, will instead implement the quiz validation feature which originally was assigned to Petter.</li>
+			  <li>[2016.11.01] Quiz have been moved to its own page on every section.</li>
               <li>[2016.11.02] The "beginner/expert mode" feature was dropped, because no potential uses were clear. This task was assigned to Thomas.
               As of now, each member has one feature to work on or previously worked on.</li>
               <li>[2016.11.02] Petter is not entirely finished with the search feature, and has been granted another week to finish it.
@@ -52,13 +46,17 @@
               Petter will write the "Parts" section. Runar will write the "Part Vendors" section, and possibly help with the "Windows" page in the "Operating Systems" section.
               Thomas will write most of the "Operating Systems" section. H&aring;vard will write the "Assembling the PC" section.
               The deadline for this is early November 13th.</li>
+			  <li>[2016.11.13] Site description is now moved to the central part of the page.</li>
+			  <li>[2016.11.13] No social icons.</li>
+			  <li>[2016.11.13] Removed information about ourself from the home page.</li>
+			  <li>[2016.11.13] Mac OS X dropped because this only applied to MACs and isn’t something you can install on every PC.</li>
             </ul>
 			<header>
 			<h2 id="logical_struct"><a href="#logical_struct">Logical Navigation Structure Changes</a></h2>
 			</header>
 			<p>Added a Quiz page on the end of every section. That contain the indented quiz.</p>
 			<p>Every section has a page linked with it (vendors don't have this because it does not have any child pages), that have a little description and a navigation structure map on it.</p>
-			<p>The navigation structure is now</p>
+			<p>The navigation structure is now.</p>
 			<ul>
               <li>Home</li>
               <li>Parts (section)
@@ -98,12 +96,12 @@
 			<header>
 			<h2 id="file_struct"><a href="#file_struct">File Navigation Structure Changes</a></h2>
 			</header>
-			<p>In images/ added a folder for assembly and vendors that contains images for the section</p>
-			<p>In pages/ added folders for every section that contains their subpages</p>
-			<p>On root added a file "content.txt" containing name of every section and page for the search function to use. The search function search every page mentioned in this file</p>
-			<p>File navigation structure is now</p>
+			<p>In images/ added a folder for assembly and vendors that contains images for the section.</p>
+			<p>In pages/ added folders for every section that contains their subpages.</p>
+			<p>On root added a file "content.txt" containing name of every section and page for the search function to use. The search function search every page mentioned in this file.</p>
+			<p>File navigation structure is now.</p>
 			<ul>
-              <li>documents/: Contains a standalone/independent site (sub-site) for project documents.
+              <li>documents/: Contains a standalone/independent site (sub-site) for project documents.</li>
                 <ul>
                   <li>images/: Contains images.</li>
                   <li>mockups/: Contains mockups of the site.</li>
@@ -150,12 +148,30 @@
             </ul>
 			
 			<header>
-              <h1><a href="#page_layout">Page Layout and Appearance Changes</a></h1>
+              <h2><a href="#content">Content</a></h1>
             </header>
-			<p>Runar made a new logo</p>
-			<p>Search function moved down to footer, where we indeed to have site description in colum 1 of 2 of the footer.</p>
-			<p>Site description is now moved to the central part of the page.</p>
-			<p>No social icons.</p>
+			
+			<header>
+              <h2><a href="#min_req">Minimum Requirements</a></h1>
+            </header>
+			<p>Everyone fulfilled their minimum requirements. Created 1 JavaScript each, and made the content for their assigned section.</p>
+			<p>Håvard must be given a medal for his work on the visuals of the page, where he created everything you see on the page from background, banner, footer, fonts. He basically created a template for us other to use. And his amazing work with implementing AJAX and the navigation bar. His AJAX code means that we can load only the parts of the webpage that changs not the entire page, this means all layout is in index.html the content loads from the respecting html files. Runar must be given the credits for the creation of the logo.</p>
+			<p>We are using external CSS files for styling, the same with JavaScript. They can be found in style/ and script/ folders in the project. When we are using external files like this we dont have to create a file for every page we create.</p>
+			<p>The Javascript files is going to be compined into 1 file, without unnecessary whitespace.</p>
+			<p>List of which JavaScript each person made.</p>
+			<ul>
+			  <li>Petter made the search function for the site.</li>
+			  <li>Håvard made the AJAX function and also the javascript for the navigation bar.</li>
+			  <li>Runar made the validation function for the quizzes.</li>
+			  <li>Thomas made the breadcrumbs function for the site.</li>
+			</ul>
+			<p>List of what content each person made.</p>
+			<ul>
+			  <li>Petter made the content for the section Parts.</li>
+			  <li>Håvard made the content for the section Assembling a PC.</li>
+			  <li>Runar made the content for the section Vendors and also the Windows subpage in the section Operating Systems.</li>
+			  <li>As of 13.13 22:00 Thomas has not made the contents for Linux, Runar has taken over this work.</li>
+			</ul>
 			
           </section>
         </main>
