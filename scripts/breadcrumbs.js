@@ -42,11 +42,12 @@ function updateBreadCrumbs(){
 	addBreadCrumb(link, sectionname, bread_list);
   }
   else if(section && page){	
+	const link1 = link;
 	query = "?section=" + section;
-	link = link + query;
+	link = link1 + query;
 	addBreadCrumb(link, sectionname, bread_list);
 	query = query  + "&page=" + page;
-	link = link + query;
+	link = link1 + query;
 	addBreadCrumb(link, pagename, bread_list);	
   }	  
 }
