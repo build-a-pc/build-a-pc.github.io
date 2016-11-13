@@ -34,11 +34,13 @@ function updateBreadCrumbs(){
 		query = "?section=" + section;
 		link = link + query;
 		addBreadCrumb(link, sectionname, bread_list);
+		console.log("A");
 	}
 	else if(!section && page){
 		query = "?page=" + page;
 		link = link + query;
 		//addBreadCrumb(link, pagename, bread_list);
+		console.log("B");
 	}
 	else if(section && page){	
 		query = "?section=" + section;
@@ -47,6 +49,7 @@ function updateBreadCrumbs(){
 		query = query  + "&page=" + page;
 		link = link + query;
 		addBreadCrumb(link, pagename, bread_list);	
+		console.log("C");
 	}	  
 }
 
