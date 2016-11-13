@@ -5,7 +5,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Document P3: Testing" />
+    <meta name="description" content="Document P4: Testing" />
     <meta name="author" content="H&aring;vard, Runar, Petter, Thomas" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>P4 Testing</title>
@@ -22,17 +22,248 @@
       <div class="banner">
         <p class="banner-title"><a href="#">P4 Testing</a></p>
         <p class="banner-sub-title">H&aring;vard, Petter, Runar, Thomas</p>
-        <p class="banner-date"><span style="background-color: red;">DATE</span></p>
+        <p class="banner-date">Sunday 13.11.2016</p>
       </div>
 
       <div class="inner-container">
         <main>
-          <section id="wip">
+          <section id="intro">
+            <p>Client: Ad Infinitum (our team)</p>
+          </section>
+
+          <hr />
+
+          <section id="testing_document">
             <header>
-              <h1><a href="#wip">WIP</a></h1>
+              <h1><a href="#testing_document">Testing Document</a></h1>
             </header>
 
-            <p>WIP</p>
+            <p>We created a Google Form which asks the tester to navigate through the page and test the different features.
+            The form had the following questions:</p>
+
+            <h2 if="the_form"><a href="#the_form">The Form</a></h2>
+            <p>Answer these questions WHILE browsing the website. Go to <a href="https://build-a-pc.github.io">build-a-pc.github.io</a>.</p>
+            <p>Please ignore the currently unfinished breadcrumbs (gray bar under navigation bar) and some missing content.</p>
+            <ol>
+              <li>How old are you?
+                <ul>
+                  <li>0-15</li>
+                  <li>16-20</li>
+                  <li>21-25</li>
+                  <li>26-30</li>
+                  <li>31-40</li>
+                  <li>40-&infin;</li>
+                </ul>
+              </li>
+              <li>Are you currently using a mobile device to view the website?
+                <ul>
+                  <li>Yes</li>
+                  <li>No</li>
+                </ul>
+              </li>
+              <li>What is the purpose of this website?
+                <ul>
+                  <li>(text input)</li>
+                </ul>
+              </li>
+              <li>Do you think you will find the contents of this site interesting?
+                <ul>
+                  <li>Yes</li>
+                  <li>No</li>
+                  <li>Maybe</li>
+                </ul>
+              </li>
+              <li>Go to the page about the operating system Windows. How did you find this page?
+                <ul>
+                  <li>Via the dropdown menu at he top</li>
+                  <li>Searching at the bottom</li>
+                  <li>Didn't find it</li>
+                  <li>Other: (text input)</li>
+                </ul>
+              </li>
+              <li>Try one of the quizzes. Would you bother answering this if we didn't ask you to?
+                <ul>
+                  <li>Yes</li>
+                  <li>No</li>
+                </ul>
+              </li>
+              <li>Try using the search feature in the site footer. Did it work as expected?
+                <ul>
+                  <li>(text input)</li>
+                </ul>
+              </li>
+              <li>What did you find weird or wrong about the website?
+                <ul>
+                  <li>(text input)</li>
+                </ul>
+              </li>
+              <li>How could we improve the site (layout, features, etc.)?
+                <ul>
+                  <li>(text input)</li>
+                </ul>
+              </li>
+              <li>How well did you understand how the website works overall and how to navigate it?
+                <ul>
+                  <li>1 (Not at all)</li>
+                  <li>2</li>
+                  <li>3</li>
+                  <li>4</li>
+                  <li>5 (Very well)</li>
+                </ul>
+              </li>
+            </ol>
+          </section>
+
+          <hr />
+
+          <section id="feedback">
+            <header>
+              <h1><a href="#feedback">Feedback Summary</a></h1>
+            </header>
+
+            <p>This is the summary of feedback we got from 13 testers. Our response is written below each question.</p>
+
+            <ol>
+              <li>How old are you?
+                <ul>
+                  <li>16-20: 67%</li>
+                  <li>21-30: 33%</li>
+                  <li>Others: 0%</li>
+                </ul>
+                <p>Response: The people we contacted were in this range, which we thought was appropriate for people wanting to build a PC.</p>
+              </li>
+              <li>Are you currently using a mobile device to view the website?
+                <ul>
+                  <li>No: 77%</li>
+                  <li>Yes: 23%</li>
+                </ul>
+                <p>Response: We needed a few people to test the mobile version but most people testing the desktop version,
+                  so this distribution is perfect for testing. We did not interfere with their choices.</p>
+              </li>
+              <li>What is the purpose of this website?
+                <ul>
+                  <li>Learning to build PCs: 69%</li>
+                  <li>Don't know: 15%</li>
+                  <li>Junk: 15%</li>
+                </ul>
+                <p>Response: Most people understood the meaning of the site. The ones who didn't understand the purpose didn't specify why (maybe they didn't care).
+                  We can't think of any way to make the purpose more clear, the site banner clearly says "Build-a-PC" and the home page says "A PC Building Tutorial".
+                  If they didn't understand, they must not know what a PC is and therefore have no interest of building one either.</p>
+              </li>
+              <li>Do you think you will find the contents of this site interesting?
+                <ul>
+                  <li>Yes: 39%</li>
+                  <li>No: 31%</li>
+                  <li>Maybe: 31%</li>
+                </ul>
+                <p>Response: The content of the site was a secondary priority, our primary priority was the layout, style, functionality, responsitivity, accessibility, and so on.
+                  This could have been improved if we had a real client (not us) which provided us with the content.</p>
+              </li>
+              <li>Go to the page about the operating system Windows. How did you find this page?
+                <ul>
+                  <li>Via the dropdown menu at he top: 77%</li>
+                  <li>Didn't find it: 15%</li>
+                  <li>Other: (junk):  8%</li>
+                  <li>Searching at the bottom: 0%</li>
+                </ul>
+                <p>Response: Most people found it via the navigation bar, as expected.
+                  The two people who didn't find it must not have tried very hard or must not be very experienced with normal web pages.</p>
+              </li>
+              <li>Try one of the quizzes. Would you bother answering this if we didn't ask you to?
+                <ul>
+                  <li>No: 69%</li>
+                  <li>Yes: 31%</li>
+                </ul>
+                <p>Response: We didn't ask if it worked, because it's such simple feature assumed to work. Some people would try it if not asked, which is nice.
+                  We do not want to force people through the quizzes, if they want they can skip right past it, whatever they please.</p>
+              </li>
+              <li>Try using the search feature in the site footer. Did it work as expected?
+                <ul>
+                  <li>Yes: 69%</li>
+                  <li>Don't know: 15%</li>
+                  <li>No: 8%</li>
+                  <li>Junk: 8%</li>
+                </ul>
+                <p>Response: Most people claim it worked as expected. Two claimed they don't know, meaning they didn't bother to try (we can't do much about that).
+                  One person claimed it did not, but did not specify why. Maybe that is the same person that wrote a comment about it in one of the latter questions.
+                  Maybe we should ask more specifically about what didn't work in the form.</p>
+              </li>
+              <li>What did you find weird or wrong about the website?
+                <ul>
+                  <li>Nothing: 31%</li>
+                  <li>Search bar at the bottom: 15%</li>
+                  <li>Site not finished: 15%</li>
+                  <li>Grammatical errors: 8%</li>
+                  <li>Mainly designed for mobile devices: 8%</li>
+                  <li>Junk: 23%</li>
+                </ul>
+                <p>Response: Two people said that the search bar should be in the top.
+                  We agree with that, but we decided to place it in the bottom because we already had an empty slot there, and it would be hard to place it in
+                  the top because we would have to move it around a lot when the screen got smaller. It would be doable, but would require a lot of time
+                  and effort getting it right, so we decided it was not worth it.</p>
+                <p>Two people said that the site was not finished, which is correct. One of us did not meet the deadlines we agreed upon. See document P3 for more information.
+                  One person said the site had a lot of grammatical errors. These are easy to fix, but we do not have enough time to fix all of them since
+                  we are behind on schedule since the deadlines were not met. Lastly, one person said the site was designed mainly for mobile devices.</p>
+              </li>
+              <li>How could we improve the site (layout, features, etc.)?
+                <ul>
+                  <li>Don't know / nothing needs improvement: 64%</li>
+                  <li>More pictures or better images: 23%</li>
+                  <li>Buttons should look like buttons: 8%</li>
+                  <li>Go to site once search is entered: 8%</li>
+                  <li>Junk: 8%</li>
+                </ul>
+                <p>Response: We notice how some pages could need some more images.
+                  Since we are exceptional photographers, we would not be able to take much better images. We can not find any "bad" images.</p>
+
+                <p>We're not sure which buttons need to look more like buttons, as we don't have many buttons on the site. Maybe the home page buttons
+                  which link to the sections, which look very flat when not hovered (which touch users can't do). We could add some more shadow, maybe.</p>
+
+                <p>The search related feedback might mean the user wants to go to a search page once he presses enter. We chose not to do this because the search function
+                  is very basic and would not need a dedicated search page.</p>
+              </li>
+              <li>How well did you understand how the website works overall and how to navigate it?
+                <ul>
+                  <li>1 (Not at all): 8%</li>
+                  <li>2: 0%</li>
+                  <li>3: 15%</li>
+                  <li>4: 15%</li>
+                  <li>5 (Very well): 62%</li>
+                </ul>
+                <p>Response: Most users understood wery well how to navigate the site and thought it worked well.
+                  The others might have expressed their dissatisfaction in the previous question.</p>
+              </li>
+            </ol>
+          </section><hr />
+
+          <section id="self_reflection">
+            <header>
+              <h1><a href="#self_reflection">Self-Reflection</a></h1>
+            </header>
+
+            <h2 if="self_reflection_haavard"><a href="#self_reflection_haavard">H&aring;vard</a></h2>
+            <p>I knew a bit of HTML and CSS before the course started, so I didn't attend many lectures.
+              I have however learned a lot of JS and have gotten much more fluent in HTML and CSS.
+              I have always wanted to get more experience with web development, but have not had the motivation to do so,
+              so I'm glad I attended this course which pushed me forward and forced me to learn the essentials.</p>
+            <p>I have gotten much more experienced working in groups for projects on this size,
+              distributing the development of different parts but cooperating on the grand design and function,
+              meeting with the team members and planning forward, and trying to meet deadlines.</p>
+
+            <h2 if="self_reflection_petter"><a href="#self_reflection_petter">Petter</a></h2>
+            <p>This project have learned me a good amount about teamwork. How important the groups dynamic is for the work.</p>
+            <p>In our group 3 of us was on Facebooks messenger, and 3 of us was on mail.
+              So we had to use both for sending messages something I think killed some of the dynamic to the group.</p>
+            <p>Deadlines has become more important, not only beacuse of the deadlines set by project makers,
+              but also for our own sake, with deadlines we have a goal to work after.</p>
+
+            <h2 if="self_reflection_runar"><a href="#self_reflection_runar">Runar</a></h2>
+            <p>Når jeg tenkter tilbake på denne perioden vi har jobbet med prosjektet mener jeg at vi kunne ha jobbet mye mer effektivt og regelmessig.
+              Min oppfatning er at ting har blitt like før deadlines og jeg tror at hvis vi skulle ha gjort dette på nytt at
+              vi burde hatt strammere tidsfrister. Utenom dette er jeg fornøyd med resultatet som vi til slutt endte opp med.</p>
+
+            <h2 if="self_reflection_thomas"><a href="#self_reflection_thomas">Thomas</a></h2>
+            <p>(work in progress)</p>
           </section>
         </main>
       </div>
