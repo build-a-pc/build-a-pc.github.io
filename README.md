@@ -3,4 +3,4 @@ A NTNU IT2805 Web Technologies project by H&aring;vard, Runar, Petter, Thomas (t
 
 This site uses XMLHTTPRequest to fetch content pages, so we've made it so that it fetches content pages from build-a-pc.github.io instead if the file protocol is used.
 
-The project is now delivered and is not likely to receive any content updates.
+**The project is now delivered and will not receive any updates.**
